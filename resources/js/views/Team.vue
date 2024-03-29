@@ -5,7 +5,9 @@
             <li class="breadcrumb-item">
                <a href="/">Overview</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Team</li>
+            <li class="breadcrumb-item active" aria-current="page">
+               Team
+            </li>
          </ol>
       </nav>
       <div class="dropdown">

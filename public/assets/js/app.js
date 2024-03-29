@@ -19430,9 +19430,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Avatar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Avatar.vue */ "./resources/js/components/Avatar.vue");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
   name: "Task",
+  components: {
+    Avatar: _Avatar_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  props: {
+    id: {
+      type: Number,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    progress: {
+      type: Number,
+      required: true
+    },
+    time: {
+      type: String,
+      required: true
+    },
+    checks: {
+      type: String,
+      required: true
+    },
+    users: {
+      type: Array,
+      required: true
+    }
+  },
   setup: function setup() {
     return {};
   }
@@ -19458,14 +19489,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
   name: "TaskSection",
   components: {
-    Task: _Task_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    TaskComponent: _Task_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: {
     name: {
       type: String,
       required: true
     },
-    taskSections: {
+    tasks: {
       type: Array,
       required: true
     }
@@ -19705,7 +19736,7 @@ __webpack_require__.r(__webpack_exports__);
         project.files = data.files;
         project.activities = data.activities;
         project.users = data.users;
-        console.log("activities", project.activities);
+        console.log("project", project);
       } else {
         console.log("No data to display");
       }
@@ -20163,22 +20194,78 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "card card-task"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_2 = {
   "class": "progress"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "progress-bar bg-danger",
-  role: "progressbar",
-  style: {
-    "width": "75%"
-  },
-  "aria-valuenow": "25",
-  "aria-valuemin": "0",
-  "aria-valuemax": "100"
-})], -1 /* HOISTED */);
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"card-body\"><div class=\"card-title\"><a href=\"#\"><h6 data-filter-by=\"text\">Client objective meeting</h6></a><span class=\"text-small\">Today</span></div><div class=\"card-meta\"><ul class=\"avatars\"><li><a href=\"#\" data-toggle=\"tooltip\" title=\"Kenny\"><img alt=\"Kenny Tran\" class=\"avatar\" src=\"assets/img/avatar-male-6.jpg\"></a></li></ul><div class=\"d-flex align-items-center\"><i class=\"material-icons\">playlist_add_check</i><span>3/4</span></div><div class=\"dropdown card-options\"><button class=\"btn-options\" type=\"button\" id=\"task-dropdown-button-1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"material-icons\">more_vert</i></button><div class=\"dropdown-menu dropdown-menu-right\"><a class=\"dropdown-item\" href=\"#\">Mark as done</a><div class=\"dropdown-divider\"></div><a class=\"dropdown-item text-danger\" href=\"#\">Archive</a></div></div></div></div>", 1);
-var _hoisted_4 = [_hoisted_2, _hoisted_3];
+};
+var _hoisted_3 = {
+  "class": "card-body"
+};
+var _hoisted_4 = {
+  "class": "card-title"
+};
+var _hoisted_5 = {
+  href: "#"
+};
+var _hoisted_6 = {
+  "data-filter-by": "text"
+};
+var _hoisted_7 = {
+  "class": "text-small"
+};
+var _hoisted_8 = {
+  "class": "card-meta"
+};
+var _hoisted_9 = {
+  "class": "avatars"
+};
+var _hoisted_10 = {
+  "class": "d-flex align-items-center"
+};
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "material-icons"
+}, "playlist_add_check", -1 /* HOISTED */);
+var _hoisted_12 = {
+  "class": "dropdown card-options"
+};
+var _hoisted_13 = ["id"];
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "material-icons"
+}, "more_vert", -1 /* HOISTED */);
+var _hoisted_15 = [_hoisted_14];
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "dropdown-menu dropdown-menu-right"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "dropdown-item",
+  href: "#"
+}, "Mark as done"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "dropdown-divider"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "dropdown-item text-danger",
+  href: "#"
+}, "Archive")], -1 /* HOISTED */);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_4);
+  var _component_Avatar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Avatar");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)('width:' + _ctx.progress + '%'),
+    "class": "progress-bar bg-danger",
+    role: "progressbar",
+    "aria-valuenow": "25",
+    "aria-valuemin": "0",
+    "aria-valuemax": "100"
+  }, null, 4 /* STYLE */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.name), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.time), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.users, function (user) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Avatar, {
+      name: user.username,
+      image: user.image,
+      link: true
+    }, null, 8 /* PROPS */, ["name", "image"]);
+  }), 256 /* UNKEYED_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.checks), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    id: 'task-dropdown-button-' + _ctx.id,
+    "class": "btn-options",
+    type: "button",
+    "data-toggle": "dropdown",
+    "aria-haspopup": "true",
+    "aria-expanded": "false"
+  }, _hoisted_15, 8 /* PROPS */, _hoisted_13), _hoisted_16])])])]);
 }
 
 /***/ }),
@@ -20207,8 +20294,17 @@ var _hoisted_4 = {
   "class": "card-list-body"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_Task = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Task");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.name), 1 /* TEXT */), _hoisted_3]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Task), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Task), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Task), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Task)])]);
+  var _component_TaskComponent = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("TaskComponent");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.name), 1 /* TEXT */), _hoisted_3]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.tasks, function (task) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_TaskComponent, {
+      id: task.id,
+      name: task.name,
+      progress: 20,
+      time: task.created,
+      checks: '1/5',
+      users: task.users
+    }, null, 8 /* PROPS */, ["id", "name", "time", "users"]);
+  }), 256 /* UNKEYED_FRAGMENT */))])]);
 }
 
 /***/ }),
@@ -21422,7 +21518,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, "Team")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
   "class": "breadcrumb-item active",
   "aria-current": "page"
-}, "Project")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, " Project ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "dropdown"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "btn btn-round",
@@ -21576,12 +21672,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), 256 /* UNKEYED_FRAGMENT */))]), _hoisted_9]), _hoisted_10]), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.project.tasks, function (section) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_TaskSection, {
       name: section.name,
-      "task-sections": section.tasks
-    }, null, 8 /* PROPS */, ["name", "task-sections"]);
+      tasks: section.tasks
+    }, null, 8 /* PROPS */, ["name", "tasks"]);
   }), 256 /* UNKEYED_FRAGMENT */))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_File), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_File), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_File), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_File), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_File)])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ol", _hoisted_28, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.project.activities, function (activity) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Activity, {
       icon: "playlist_add_check",
-      image: "assets/img/default-avatar.jpg",
+      image: "assets/img/default-avatar.png",
       username: "jaureguiomar",
       description: "Testing description",
       time: "Just now"
@@ -21617,7 +21713,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, "Overview")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
   "class": "breadcrumb-item active",
   "aria-current": "page"
-}, "Team")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, " Team ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "dropdown"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "btn btn-round",

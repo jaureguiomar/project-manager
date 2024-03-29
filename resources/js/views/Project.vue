@@ -8,7 +8,9 @@
             <li class="breadcrumb-item">
                <a href="/team">Team</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Project</li>
+            <li class="breadcrumb-item active" aria-current="page">
+               Project
+            </li>
          </ol>
       </nav>
       <div class="dropdown">
@@ -91,7 +93,7 @@
                      <TaskSection
                         v-for="section in project.tasks"
                         :name="section.name"
-                        :task-sections="section.tasks"
+                        :tasks="section.tasks"
                      />
                   </div>
                </div>
@@ -193,7 +195,7 @@
                            <Activity
                               v-for="activity in project.activities"
                               icon="playlist_add_check"
-                              image="assets/img/default-avatar.jpg"
+                              image="assets/img/default-avatar.png"
                               username="jaureguiomar"
                               description="Testing description"
                               time="Just now"
@@ -264,7 +266,7 @@ export default defineComponent({
                project.files = data.files;
                project.activities = data.activities;
                project.users = data.users;
-               console.log("activities", project.activities);
+               console.log("project", project);
             } else {
                console.log("No data to display");
             }

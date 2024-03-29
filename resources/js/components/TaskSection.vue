@@ -13,31 +13,36 @@
          </div>
       </div>
       <div class="card-list-body">
-         <Task />
-         <Task />
-         <Task />
-         <Task />
+         <TaskComponent
+            v-for="task in tasks"
+            :id="task.id"
+            :name="task.name"
+            :progress="20"
+            :time="task.created"
+            :checks="'1/5'"
+            :users="task.users"
+         />
       </div>
    </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import Task from "./Task.vue";
-import { Task as TaskType } from "../types/task";
+import TaskComponent from "./Task.vue";
+import { TaskUser } from "../types/task";
 
 export default defineComponent({
    name: "TaskSection",
    components: {
-      Task
+      TaskComponent
    },
    props: {
       name: {
          type: String,
          required: true
       },
-      taskSections: {
-         type: Array as PropType<TaskType[]>,
+      tasks: {
+         type: Array as PropType<TaskUser[]>,
          required: true
       }
    },

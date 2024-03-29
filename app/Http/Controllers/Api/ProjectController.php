@@ -61,7 +61,8 @@ class ProjectController extends Controller {
       }
       // $project->task_modules = $taskModules;
 
-      // Configure tasks
+      /////////////////////
+      // Configure tasks //
       $tasksOrdered = [];
       for($i = 0; $i < sizeof($taskModules); $i++) {
          $alreadyAdded = false;
@@ -81,6 +82,8 @@ class ProjectController extends Controller {
             }
          }
       }
+      // Check empty sections
+      // Code here...
       $project->tasks = $tasksOrdered;
 
       // Setup files
