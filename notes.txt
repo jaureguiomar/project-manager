@@ -1,0 +1,203 @@
+##################
+## Installation ##
+## Create project
+## Via composer (Prefered)
+    composer create-project laravel/laravel:^8.0 example-app
+    or
+    composer create-project laravel/laravel:^9.0 example-app
+    or
+    composer create-project laravel/laravel:^10.0 example-app
+
+    cd example-app
+    php artisan serve
+
+## Via laravel installer
+    composer global require laravel/installer
+    laravel new example-app
+    cd example-app
+    php artisan serve
+
+## Plugins
+    -- Doctrine
+        - Update specific column from a migration
+            composer require doctrine/dbal
+    -- Tinker
+        - Do something with something (new file: config/tinker.php)
+            php artisan vendor:publish
+                - Select "[9] Provider: Laravel\Tinker\TinkerServiceProvider"
+            php artisan tinker
+                - Give access to project from terminal, example:
+                // Find data
+                use App\Models\User;             // Import UserModel
+                User::all();                     // Retrieve all data from UserModel
+                clear                            // Clear console
+                $user = User::first();           // Retrieve first row from UserModel
+                $user->posts();                  // Retrieve all posts from a UserModel
+                $user = User::find(1);           // Retrieve user where id = 1 from UserModel
+                clear
+                $user
+                $user = User::with("posts")->find(1);
+                $user->phone
+                // Create row
+                use App\Models\Phone;
+                $phone = new Phone;
+                $phone->user_id = 1;
+                $phone->phone_number = "1234567";
+                $phone->created_at = now();
+                $phone->save();
+                $user = User::with(["phone", "posts"]); // Retrieve user with his ["phone", "posts"] assigned
+                // Update row (Way 1)
+                $phone = Phone::find(1);
+                $phone->phone_number = "1234567"
+                $phone->save();
+                // Update row (Way 2)
+                $phone->fill(["phone_number" => "12345"]);
+                // Delete row
+                $user = User::find(1);
+                $user->delete();
+                $user->phone;
+                // Delete row with subdata (posts with user)
+                $user->posts()->delete();
+                $user->delete();
+    -- Laravel Breeze
+        - Auth system for Laravel (It uses AlphineJS)
+            composer require laravel/breeze --dev
+            php artisan breeze:install
+                - Questions:
+                    * Blade with Alphine
+                    * Dark mode yes
+                    * PHPUnit
+                - Directories created: [
+                    "app/Http/Controllers/Auth", "app/Http/Requests/Auth", "resource/views/auth",
+                    "routes/auth.php", "public/css", "public/js"
+                ]
+            - If required (Module not running):
+                npm install && npm run dev
+
+## User model custom
+    1.- Go to "App/Models/User.php":
+        class User extends Model
+        -- to --
+        use Illuminate\Foundation\Auth\User as Authenticatable;
+        class User extends Authenticatable
+    2.- Go to "config/auth.php":
+        'providers' => [
+            'users' => [
+                'driver' => 'eloquent',
+                'model' => App\Models\User::class,  <----  THIS CODE
+            ]
+        ]
+
+## Typescript support
+    -- NPM Installations
+        npm install laravel-mix --save-dev
+        npm install ts-loader --save-dev
+        npm install typescript --save-dev
+    -- tsconfig.json
+        tsc --init
+            - Change the following:
+                "compilerOptions": {
+                    "sourceMap": false,
+                    "noImplicitAny": true
+                },
+                "include": [ "public/assets/ts/**/*" ]
+    -- webpack.mix.cjs
+        - Copy file from some project from "curso-laravel"
+    -- package.json
+        - Change the option [ "type": "module" ] to:
+            "type": "commonjs"
+
+## Create custom functions
+1.- Create folder/file:
+    app/Functions||Helpers/filename.php
+2.- Modify composer.json with the following:
+    "autoload": {
+        ...
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [     <-----     This code
+            "app/Functions/filename.php"
+        ]
+        ...
+    }
+3.- Run the following code:
+    composer dump-autoload
+
+################
+## Migrations ##
+## Some codes
+    php artisan migrate                  --> Does database migrations
+    php artisan migrate:rollback         --> Does a database rollback migration
+    php artisan migrate:rollback --force --> Does a database rollback migration without asking
+    php artisan migrate:reset            --> Remove all migrations (rollback of every migration created)
+    php artisan migrate:fresh            --> Empty all the table rows?
+    php artisan migrate:fresh -- seed    --> Empty all the table rows? (and call the DatabaseSeeder.php)
+    php artisan schema:dump              --> Create a .dump file of the database schema
+    php artisan schema:dump --purge      --> Remove migrations created on the migrations folders (Clean up migrations)
+    php artisan make:migration create_<table-name>_table
+    php artisan make:migration create_<table-name>_table --table=post_app
+    php artisan make:migration add_<column-name>_to_<table-name>_table
+    php artisan make:migration update_<column-name>_to_<table-name>_table
+    php artisan make:controller <controller-name>    --> Create a controller
+    php artisan make:controller  Api/V1/<controller-name> --api --model=<model-name>
+    php artisan make:controller  Api/V1/DepartamentoController --api --model=Departamento
+    php artisan make:model <model-name>    --> Create a model
+    php artisan make:model <model-name> -m --> Create a model and create migrations
+    php artisan make:provider <provider-name> --> Create provider
+    php artisan make:provider <Name>Provider --> Create provider
+        Model
+            models
+        ModelName
+            models_name
+    php artisan db:seed --> Goes to "database/seeders/DatabaseSeeder.php" and generate data for the database
+    php artisan make:factory <factory-name>
+    php artisan make:seeder <seeder-name> --> Creates a custom seeder
+
+## Usage in real time
+    php artisan make:migration create_posts_table
+        - Then modify the migration file created to setup custom columns to the table
+            $table->string("title", 100);
+            $table->text("content");
+    php artisan migrate
+    php artisan migrate:rollback                                       --> If has an error with the previous migrate
+    php artisan make:migration add_user_id_to_posts_table --> To add column to existing table
+        - Then modify the migration file created to setup new column created:
+            // up function
+                $table->unsignedBigInteger("user_id")->after("id");
+                $table->foreign("user_id")->references("id")->on("users");
+                    // or
+                $table->foreignId("user_id")->constrained()->onDelete("cascade");
+            // down function
+                $table->dropForeign("posts_user_id_foreign"); // This value displayed with "show create table (constraint)"
+                $table->dropColumn("user_id");
+    php artisan migrate
+    php artisan make:migration update_title_to_posts_table (Required "doctrine/dbal" installed)
+        - Then modify the migration file created to setup not yet updated column:
+            // up function
+                $table->string("title", 180)->change();
+            // down function
+                $table->string("title", 100)->change();
+    php artisan migrate
+    php artisan make:model Post
+    php artisan db:seed
+    php artisan migrate:fresh
+    php artisan make:factory PostFactory
+    php artisan db:seed
+    php artisan make:seeder PostSeeder
+    php artisan migrate:fresh -- seed
+    php artisan make:model Phone -m
+        - Then modify the migration file created to setup custom columns to the table
+            // up function
+                $table->unsignedBigInteger("user_id")->after("id");
+                $table->foreign("user_id")->references("id")->on("users");
+                    // or
+                $table->foreignId("user_id")->constrained()->onDelete("cascade");
+            // down function
+                $table->dropForeign("phones_user_id_foreign"); // This value displayed with "show create table (constraint)"
+                $table->dropColumn("user_id");
+    php artisan migrate
+    php artisan tinker
+    php artisan serve
