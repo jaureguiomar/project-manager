@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "@vue/compiler-sfc": "^3.4.20",
+        "gsap": "^3.12.5",
         "vue": "^3.2.13",
         "vue-router": "^4.3.0"
     }
