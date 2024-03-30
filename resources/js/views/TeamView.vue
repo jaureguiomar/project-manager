@@ -148,7 +148,7 @@ import { Project } from "../types/project";
 import { User } from "../types/user";
 
 export default defineComponent({
-   name: "Team",
+   name: "TeamView",
    components: {
       Member,
       Avatar,

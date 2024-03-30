@@ -1,20 +1,23 @@
 <template>
    <h1 v-if="route == '/'">Home</h1>
-   <Team v-else-if="route == '/team'" />
-   <Project v-else-if="route == '/project'" />
+   <TeamView v-else-if="route == '/team'" />
+   <ProjectView v-else-if="route == '/project'" />
+   <TaskView v-else-if="route == '/task'" />
    <h1 v-else>Error</h1>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from "vue";
-import Team from "./views/Team.vue";
-import Project from "./views/Project.vue";
+import TeamView from "./views/TeamView.vue";
+import ProjectView from "./views/ProjectView.vue";
+import TaskView from "./views/TaskView.vue";
 
 export default defineComponent({
    name: "App",
    components: {
-      Team,
-      Project
+      TeamView,
+      ProjectView,
+      TaskView
    },
    setup() {
       const route = ref("");

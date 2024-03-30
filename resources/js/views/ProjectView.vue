@@ -227,7 +227,7 @@ import ProjectTaskAddModal from "../components/modals/ProjectTaskAddModal.vue";
 import { ProjectAll } from "../types/project";
 
 export default defineComponent({
-   name: "Project",
+   name: "ProjectView",
    components: {
       Avatar,
       TaskSection,

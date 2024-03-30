@@ -13,7 +13,7 @@
       </div>
       <div class="card-body">
          <div class="card-title">
-            <a href="#">
+            <a href="/task">
                <h6 data-filter-by="text">{{ name }}</h6>
             </a>
             <span class="text-small">{{ time }}</span>

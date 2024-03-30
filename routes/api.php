@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\TaskController;
 use App\Http\Controllers\Api\TeamController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,5 +26,8 @@ Route::prefix("v1")->name("v1:")->group(function() {
    Route::prefix("project")->name("project:")->group(function() {
       Route::get("/{idTeam}", [ProjectController::class, "index"]);
       Route::get("/all/{idTeam}", [ProjectController::class, "all"]);
+   });
+   Route::prefix("task")->name("task:")->group(function() {
+      Route::get("/{idTeam}/{idProject}", [TaskController::class, "index"]);
    });
 });
