@@ -20300,10 +20300,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       id: task.id,
       name: task.name,
       progress: 20,
-      time: task.created,
+      time: 'Just now',
       checks: '1/5',
       users: task.users
-    }, null, 8 /* PROPS */, ["id", "name", "time", "users"]);
+    }, null, 8 /* PROPS */, ["id", "name", "users"]);
   }), 256 /* UNKEYED_FRAGMENT */))])]);
 }
 

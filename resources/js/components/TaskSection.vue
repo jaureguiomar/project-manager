@@ -18,7 +18,7 @@
             :id="task.id"
             :name="task.name"
             :progress="20"
-            :time="task.created"
+            :time="'Just now'"
             :checks="'1/5'"
             :users="task.users"
          />

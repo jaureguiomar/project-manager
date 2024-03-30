@@ -77,13 +77,18 @@ class ProjectController extends Controller {
                   $tasksOrdered[$i]["tasks"] = [];
                   $alreadyAdded = true;
                } else {
-                  array_push($tasksOrdered[$i]["tasks"], $task);
+                  $users = [];
+                  $projectUsers = ProjectUser::where("project_id", $project->id)->get();
+                  for($k = 0; $k < sizeof($projectUsers); $k++)
+                     array_push($users, User::find($projectUsers[$k]->user_id));
+
+                  $taskModified = $task;
+                  $taskModified->users = $users;
+                  array_push($tasksOrdered[$i]["tasks"], $taskModified);
                }
             }
          }
       }
-      // Check empty sections
-      // Code here...
       $project->tasks = $tasksOrdered;
 
       // Setup files
