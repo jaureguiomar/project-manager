@@ -6,4 +6,8 @@ class TaskController extends Controller {
    public function index():View {
       return view("task.index");
    }
+
+   public function kanban():View {
+      return view("task.kanban");
+   }
 }

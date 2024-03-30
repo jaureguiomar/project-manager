@@ -29,6 +29,10 @@ Route::prefix("project")->name("project:")->group(function() {
 });
 Route::prefix("task")->name("task:")->group(function() {
    Route::get("/", [TaskController::class, "index"])->name("index");
+   // Route::get("/", [TaskController::class, "kanban"])->name("kanban"); // Check the route (error!)
+});
+Route::prefix("kanban")->name("kanban:")->group(function() { // Add together with "task" routes
+   Route::get("/", [TaskController::class, "kanban"])->name("kanban");
 });
 Route::prefix("user")->name("user:")->group(function() {
    Route::get("/", [UserController::class, "index"])->name("index");

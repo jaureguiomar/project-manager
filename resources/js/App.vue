@@ -3,6 +3,7 @@
    <TeamView v-else-if="route == '/team'" />
    <ProjectView v-else-if="route == '/project'" />
    <TaskView v-else-if="route == '/task'" />
+   <KanbanView v-else-if="route == '/kanban'" />
    <h1 v-else>Error</h1>
 </template>
 
@@ -11,13 +12,15 @@ import { defineComponent, ref, onMounted } from "vue";
 import TeamView from "./views/TeamView.vue";
 import ProjectView from "./views/ProjectView.vue";
 import TaskView from "./views/TaskView.vue";
+import KanbanView from "./views/KanbanView.vue";
 
 export default defineComponent({
    name: "App",
    components: {
       TeamView,
       ProjectView,
-      TaskView
+      TaskView,
+      KanbanView
    },
    setup() {
       const route = ref("");
