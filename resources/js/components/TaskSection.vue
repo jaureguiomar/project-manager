@@ -23,7 +23,7 @@
             :users="task.users"
          />
 
-         <nav>
+         <nav v-if="tasks.length > 0">
             <ul class="pagination justify-content-end">
                <li class="page-item disabled">
                   <a class="page-link" href="#" tabindex="-1">
