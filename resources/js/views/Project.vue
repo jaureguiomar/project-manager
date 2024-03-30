@@ -266,7 +266,6 @@ export default defineComponent({
                project.files = data.files;
                project.activities = data.activities;
                project.users = data.users;
-               console.log("project", project);
             } else {
                console.log("No data to display");
             }

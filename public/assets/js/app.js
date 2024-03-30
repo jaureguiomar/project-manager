@@ -19736,7 +19736,6 @@ __webpack_require__.r(__webpack_exports__);
         project.files = data.files;
         project.activities = data.activities;
         project.users = data.users;
-        console.log("project", project);
       } else {
         console.log("No data to display");
       }
@@ -20293,6 +20292,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVN
 var _hoisted_4 = {
   "class": "card-list-body"
 };
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<nav><ul class=\"pagination justify-content-end\"><li class=\"page-item disabled\"><a class=\"page-link\" href=\"#\" tabindex=\"-1\"> &lt; </a></li><li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li><li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li><li class=\"page-item\"><a class=\"page-link\" href=\"#\"> &gt; </a></li></ul></nav>", 1);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_TaskComponent = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("TaskComponent");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.name), 1 /* TEXT */), _hoisted_3]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.tasks, function (task) {
@@ -20304,7 +20304,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       checks: '1/5',
       users: task.users
     }, null, 8 /* PROPS */, ["id", "name", "users"]);
-  }), 256 /* UNKEYED_FRAGMENT */))])]);
+  }), 256 /* UNKEYED_FRAGMENT */)), _hoisted_5])]);
 }
 
 /***/ }),
