@@ -1,14 +1,21 @@
 <template>
    <div class="navbar bg-white breadcrumb-bar">
-          <nav aria-label="breadcrumb">
+         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Overview</a>
-              </li>
-              <li class="breadcrumb-item"><a href="pages-app.html#">App Pages</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">Task</li>
+               <li class="breadcrumb-item">
+                  <a href="/">Overview</a>
+               </li>
+               <li class="breadcrumb-item">
+                  <a href="/team">Team</a>
+               </li>
+               <li class="breadcrumb-item">
+                  <a href="/project">Project</a>
+               </li>
+               <li class="breadcrumb-item active" aria-current="page">
+                  Task
+               </li>
             </ol>
-          </nav>
+         </nav>
 
           <div class="dropdown">
             <button class="btn btn-round" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -33,55 +40,26 @@
                 <p class="lead">Assemble three distinct mood boards for client consideration</p>
                 <div class="d-flex align-items-center">
                   <ul class="avatars">
-
-                    <li>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="Claire Connors">
-                        <img alt="Claire Connors" class="avatar" src="assets/img/avatar-female-1.jpg" />
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="Marcus Simmons">
-                        <img alt="Marcus Simmons" class="avatar" src="assets/img/avatar-male-1.jpg" />
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="Peggy Brown">
-                        <img alt="Peggy Brown" class="avatar" src="assets/img/avatar-female-2.jpg" />
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="Harry Xai">
-                        <img alt="Harry Xai" class="avatar" src="assets/img/avatar-male-2.jpg" />
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="Sally Harper">
-                        <img alt="Sally Harper" class="avatar" src="assets/img/avatar-female-3.jpg" />
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="Ravi Singh">
-                        <img alt="Ravi Singh" class="avatar" src="assets/img/avatar-male-3.jpg" />
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="Kristina Van Der Stroem">
-                        <img alt="Kristina Van Der Stroem" class="avatar" src="assets/img/avatar-female-4.jpg" />
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="David Whittaker">
-                        <img alt="David Whittaker" class="avatar" src="assets/img/avatar-male-4.jpg" />
-                      </a>
-                    </li>
-
+                     <Avatar
+                        name="Claire Connors"
+                        image="assets/img/avatar-female-1.jpg"
+                        :link=true
+                     />
+                     <Avatar
+                        name="Marcus Simmons"
+                        image="assets/img/avatar-male-1.jpg"
+                        :link=true
+                     />
+                     <Avatar
+                        name="Marcus Simmons"
+                        image="assets/img/avatar-male-1.jpg"
+                        :link=true
+                     />
+                     <Avatar
+                        name="Marcus Simmons"
+                        image="assets/img/avatar-male-1.jpg"
+                        :link=true
+                     />
                   </ul>
                   <button class="btn btn-round flex-shrink-0" data-toggle="modal" data-target="#user-manage-modal">
                     <i class="material-icons">add</i>
@@ -135,126 +113,13 @@
                     <!--end of content list head-->
                     <div class="content-list-body">
                       <form class="checklist">
-
-                        <div class="row">
-                          <div class="form-group col">
-                            <span class="checklist-reorder">
-                              <i class="material-icons">reorder</i>
-                            </span>
-                            <div class="custom-control custom-checkbox col">
-                              <input type="checkbox" class="custom-control-input" id="checklist-item-1" checked>
-                              <label class="custom-control-label" for="checklist-item-1"></label>
-                              <div>
-                                <input type="text" placeholder="Checklist item" value="Create boards in Matboard" data-filter-by="value" />
-                                <div class="checklist-strikethrough"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <!--end of form group-->
-                        </div>
-
-                        <div class="row">
-                          <div class="form-group col">
-                            <span class="checklist-reorder">
-                              <i class="material-icons">reorder</i>
-                            </span>
-                            <div class="custom-control custom-checkbox col">
-                              <input type="checkbox" class="custom-control-input" id="checklist-item-2" checked>
-                              <label class="custom-control-label" for="checklist-item-2"></label>
-                              <div>
-                                <input type="text" placeholder="Checklist item" value="Invite team to boards" data-filter-by="value" />
-                                <div class="checklist-strikethrough"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <!--end of form group-->
-                        </div>
-
-                        <div class="row">
-                          <div class="form-group col">
-                            <span class="checklist-reorder">
-                              <i class="material-icons">reorder</i>
-                            </span>
-                            <div class="custom-control custom-checkbox col">
-                              <input type="checkbox" class="custom-control-input" id="checklist-item-3" checked>
-                              <label class="custom-control-label" for="checklist-item-3"></label>
-                              <div>
-                                <input type="text" placeholder="Checklist item" value="Identify three distinct aesthetic styles for boards" data-filter-by="value" />
-                                <div class="checklist-strikethrough"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <!--end of form group-->
-                        </div>
-
-                        <div class="row">
-                          <div class="form-group col">
-                            <span class="checklist-reorder">
-                              <i class="material-icons">reorder</i>
-                            </span>
-                            <div class="custom-control custom-checkbox col">
-                              <input type="checkbox" class="custom-control-input" id="checklist-item-4">
-                              <label class="custom-control-label" for="checklist-item-4"></label>
-                              <div>
-                                <input type="text" placeholder="Checklist item" value="Add aesthetic style descriptions as notes" data-filter-by="value" />
-                                <div class="checklist-strikethrough"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <!--end of form group-->
-                        </div>
-
-                        <div class="row">
-                          <div class="form-group col">
-                            <span class="checklist-reorder">
-                              <i class="material-icons">reorder</i>
-                            </span>
-                            <div class="custom-control custom-checkbox col">
-                              <input type="checkbox" class="custom-control-input" id="checklist-item-5">
-                              <label class="custom-control-label" for="checklist-item-5"></label>
-                              <div>
-                                <input type="text" placeholder="Checklist item" value="Assemble boards using inspiration from Dribbble, Land Book, Nicely Done etc." data-filter-by="value" />
-                                <div class="checklist-strikethrough"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <!--end of form group-->
-                        </div>
-
-                        <div class="row">
-                          <div class="form-group col">
-                            <span class="checklist-reorder">
-                              <i class="material-icons">reorder</i>
-                            </span>
-                            <div class="custom-control custom-checkbox col">
-                              <input type="checkbox" class="custom-control-input" id="checklist-item-6">
-                              <label class="custom-control-label" for="checklist-item-6"></label>
-                              <div>
-                                <input type="text" placeholder="Checklist item" value="Gather feedback from project team" data-filter-by="value" />
-                                <div class="checklist-strikethrough"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <!--end of form group-->
-                        </div>
-
-                        <div class="row">
-                          <div class="form-group col">
-                            <span class="checklist-reorder">
-                              <i class="material-icons">reorder</i>
-                            </span>
-                            <div class="custom-control custom-checkbox col">
-                              <input type="checkbox" class="custom-control-input" id="checklist-item-7">
-                              <label class="custom-control-label" for="checklist-item-7"></label>
-                              <div>
-                                <input type="text" placeholder="Checklist item" value="Invite clients to board before next concept meeting" data-filter-by="value" />
-                                <div class="checklist-strikethrough"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <!--end of form group-->
-                        </div>
-
+                        <Checklist :checked="true" />
+                        <Checklist :checked="false" />
+                        <Checklist :checked="true" />
+                        <Checklist :checked="false" />
+                        <Checklist :checked="true" />
+                        <Checklist :checked="false" />
+                        <Checklist :checked="true" />
                       </form>
                       <div class="drop-to-delete">
                         <div class="drag-to-delete-title">
@@ -286,95 +151,10 @@
                     </div>
                     <!--end of content list head-->
                     <div class="content-list-body">
-
-                      <div class="card card-note">
-                        <div class="card-header">
-                          <div class="media align-items-center">
-                            <img alt="Peggy Brown" src="assets/img/avatar-female-2.jpg" class="avatar" data-toggle="tooltip" data-title="Peggy Brown" data-filter-by="alt" />
-                            <div class="media-body">
-                              <h6 class="mb-0" data-filter-by="text">First meeting notes</h6>
-                            </div>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <span data-filter-by="text">Just now</span>
-                            <div class="ml-1 dropdown card-options">
-                              <button class="btn-options" type="button" id="note-dropdown-button-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">more_vert</i>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Edit</a>
-                                <a class="dropdown-item text-danger" href="#">Delete</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-body" data-filter-by="text">
-                          <p>Here&#39;s a quick rundown of companies the client expressed interest in on our call this morning:</p>
-                          <ul>
-                            <li><a href="#">Commonwealth Bank of Australia</a> for the bright, positive color scheme</li>
-                            <li><a href="#">Bupa Health Insurance</a> for the adaptability of their logo around the site&#39;s layout</li>
-                            <li><a href="#">OPSM</a> again for the color scheme, this time for the softer pallette</li>
-                          </ul>
-
-                        </div>
-                      </div>
-
-                      <div class="card card-note">
-                        <div class="card-header">
-                          <div class="media align-items-center">
-                            <img alt="David Whittaker" src="assets/img/avatar-male-4.jpg" class="avatar" data-toggle="tooltip" data-title="David Whittaker" data-filter-by="alt" />
-                            <div class="media-body">
-                              <h6 class="mb-0" data-filter-by="text">Client preference</h6>
-                            </div>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <span data-filter-by="text">Yesterday</span>
-                            <div class="ml-1 dropdown card-options">
-                              <button class="btn-options" type="button" id="note-dropdown-button-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">more_vert</i>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Edit</a>
-                                <a class="dropdown-item text-danger" href="#">Delete</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-body" data-filter-by="text">
-                          <p>Hi all, just wanted to add that the client has requested that we lean toward a &#39;friendly&#39; aesthetic. I know this seems a little vague but it does give us a starting point for the mood boards. I recommend we use larger
-                            corporates who target &#39;youthful&#39; audiences as initial inspiration. <a href="#">@Peggy</a> will take the lead from here.</p>
-
-                        </div>
-                      </div>
-
-                      <div class="card card-note">
-                        <div class="card-header">
-                          <div class="media align-items-center">
-                            <img alt="Ravi Singh" src="assets/img/avatar-male-3.jpg" class="avatar" data-toggle="tooltip" data-title="Ravi Singh" data-filter-by="alt" />
-                            <div class="media-body">
-                              <h6 class="mb-0" data-filter-by="text">Matboard links</h6>
-                            </div>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <span data-filter-by="text">Just now</span>
-                            <div class="ml-1 dropdown card-options">
-                              <button class="btn-options" type="button" id="note-dropdown-button-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">more_vert</i>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Edit</a>
-                                <a class="dropdown-item text-danger" href="#">Delete</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-body" data-filter-by="text">
-                          <p>Hey guys, here&#39;s the link to the Matboards: <a href="#">https://matboard.io/3928462</a>
-                          </p>
-
-                        </div>
-                      </div>
-
+                     <Note />
+                     <Note />
+                     <Note />
+                     <Note />
                     </div>
                   </div>
                 </div>
@@ -446,172 +226,12 @@
                       </form>
 
                       <ul class="list-group list-group-activity dropzone-previews flex-column-reverse">
-
-                        <li class="list-group-item">
-                          <div class="media align-items-center">
-                            <ul class="avatars">
-                              <li>
-                                <div class="avatar bg-primary">
-                                  <i class="material-icons">insert_drive_file</i>
-                                </div>
-                              </li>
-                              <li>
-                                <img alt="Peggy Brown" src="assets/img/avatar-female-2.jpg" class="avatar" data-title="Peggy Brown" data-toggle="tooltip" data-filter-by="data-title" />
-                              </li>
-                            </ul>
-                            <div class="media-body d-flex justify-content-between align-items-center">
-                              <div>
-                                <a href="#" data-filter-by="text">client-questionnaire</a>
-                                <br>
-                                <span class="text-small" data-filter-by="text">48kb Text Doc</span>
-                              </div>
-                              <div class="dropdown">
-                                <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="material-icons">more_vert</i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item" href="#">Download</a>
-                                  <a class="dropdown-item" href="#">Share</a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item text-danger" href="#">Delete</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-
-                        <li class="list-group-item">
-                          <div class="media align-items-center">
-                            <ul class="avatars">
-                              <li>
-                                <div class="avatar bg-primary">
-                                  <i class="material-icons">folder</i>
-                                </div>
-                              </li>
-                              <li>
-                                <img alt="Harry Xai" src="assets/img/avatar-male-2.jpg" class="avatar" data-title="Harry Xai" data-toggle="tooltip" data-filter-by="data-title" />
-                              </li>
-                            </ul>
-                            <div class="media-body d-flex justify-content-between align-items-center">
-                              <div>
-                                <a href="#" data-filter-by="text">moodboard_images</a>
-                                <br>
-                                <span class="text-small" data-filter-by="text">748kb ZIP</span>
-                              </div>
-                              <div class="dropdown">
-                                <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="material-icons">more_vert</i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item" href="#">Download</a>
-                                  <a class="dropdown-item" href="#">Share</a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item text-danger" href="#">Delete</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-
-                        <li class="list-group-item">
-                          <div class="media align-items-center">
-                            <ul class="avatars">
-                              <li>
-                                <div class="avatar bg-primary">
-                                  <i class="material-icons">image</i>
-                                </div>
-                              </li>
-                              <li>
-                                <img alt="Ravi Singh" src="assets/img/avatar-male-3.jpg" class="avatar" data-title="Ravi Singh" data-toggle="tooltip" data-filter-by="data-title" />
-                              </li>
-                            </ul>
-                            <div class="media-body d-flex justify-content-between align-items-center">
-                              <div>
-                                <a href="#" data-filter-by="text">possible-hero-image</a>
-                                <br>
-                                <span class="text-small" data-filter-by="text">1.2mb JPEG image</span>
-                              </div>
-                              <div class="dropdown">
-                                <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="material-icons">more_vert</i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item" href="#">Download</a>
-                                  <a class="dropdown-item" href="#">Share</a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item text-danger" href="#">Delete</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-
-                        <li class="list-group-item">
-                          <div class="media align-items-center">
-                            <ul class="avatars">
-                              <li>
-                                <div class="avatar bg-primary">
-                                  <i class="material-icons">insert_drive_file</i>
-                                </div>
-                              </li>
-                              <li>
-                                <img alt="Claire Connors" src="assets/img/avatar-female-1.jpg" class="avatar" data-title="Claire Connors" data-toggle="tooltip" data-filter-by="data-title" />
-                              </li>
-                            </ul>
-                            <div class="media-body d-flex justify-content-between align-items-center">
-                              <div>
-                                <a href="#" data-filter-by="text">LandingPrototypes</a>
-                                <br>
-                                <span class="text-small" data-filter-by="text">415kb Sketch Doc</span>
-                              </div>
-                              <div class="dropdown">
-                                <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="material-icons">more_vert</i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item" href="#">Download</a>
-                                  <a class="dropdown-item" href="#">Share</a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item text-danger" href="#">Delete</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-
-                        <li class="list-group-item">
-                          <div class="media align-items-center">
-                            <ul class="avatars">
-                              <li>
-                                <div class="avatar bg-primary">
-                                  <i class="material-icons">insert_drive_file</i>
-                                </div>
-                              </li>
-                              <li>
-                                <img alt="David Whittaker" src="assets/img/avatar-male-4.jpg" class="avatar" data-title="David Whittaker" data-toggle="tooltip" data-filter-by="data-title" />
-                              </li>
-                            </ul>
-                            <div class="media-body d-flex justify-content-between align-items-center">
-                              <div>
-                                <a href="#" data-filter-by="text">Branding-Proforma</a>
-                                <br>
-                                <span class="text-small" data-filter-by="text">15kb Text Document</span>
-                              </div>
-                              <div class="dropdown">
-                                <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="material-icons">more_vert</i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item" href="#">Download</a>
-                                  <a class="dropdown-item" href="#">Share</a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item text-danger" href="#">Delete</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-
+                        <File />
+                        <File />
+                        <File />
+                        <File />
+                        <File />
+                        <File />
                       </ul>
                     </div>
                   </div>
@@ -637,139 +257,48 @@
                     <!--end of content list head-->
                     <div class="content-list-body">
                       <ol class="list-group list-group-activity">
-
-                        <li class="list-group-item">
-                          <div class="media align-items-center">
-                            <ul class="avatars">
-                              <li>
-                                <div class="avatar bg-primary">
-                                  <i class="material-icons">edit</i>
-                                </div>
-                              </li>
-                              <li>
-                                <img alt="Peggy" src="assets/img/avatar-female-2.jpg" class="avatar" data-filter-by="alt" />
-                              </li>
-                            </ul>
-                            <div class="media-body">
-                              <div>
-                                <span class="h6" data-filter-by="text">Peggy</span>
-                                <span data-filter-by="text">added the note</span><a href="#" data-filter-by="text">Client Meeting Notes</a>
-                              </div>
-                              <span class="text-small" data-filter-by="text">Yesterday</span>
-                            </div>
-                          </div>
-                        </li>
-
-                        <li class="list-group-item">
-                          <div class="media align-items-center">
-                            <ul class="avatars">
-                              <li>
-                                <div class="avatar bg-primary">
-                                  <i class="material-icons">edit</i>
-                                </div>
-                              </li>
-                              <li>
-                                <img alt="David" src="assets/img/avatar-male-4.jpg" class="avatar" data-filter-by="alt" />
-                              </li>
-                            </ul>
-                            <div class="media-body">
-                              <div>
-                                <span class="h6" data-filter-by="text">David</span>
-                                <span data-filter-by="text">added the note</span><a href="#" data-filter-by="text">Aesthetic note</a>
-                              </div>
-                              <span class="text-small" data-filter-by="text">Yesterday</span>
-                            </div>
-                          </div>
-                        </li>
-
-                        <li class="list-group-item">
-                          <div class="media align-items-center">
-                            <ul class="avatars">
-                              <li>
-                                <div class="avatar bg-primary">
-                                  <i class="material-icons">person_add</i>
-                                </div>
-                              </li>
-                              <li>
-                                <img alt="Marcus" src="assets/img/avatar-male-1.jpg" class="avatar" data-filter-by="alt" />
-                              </li>
-                            </ul>
-                            <div class="media-body">
-                              <div>
-                                <span class="h6" data-filter-by="text">Marcus</span>
-                                <span data-filter-by="text">was assigned to the task</span>
-                              </div>
-                              <span class="text-small" data-filter-by="text">4 days ago</span>
-                            </div>
-                          </div>
-                        </li>
-
-                        <li class="list-group-item">
-                          <div class="media align-items-center">
-                            <ul class="avatars">
-                              <li>
-                                <div class="avatar bg-primary">
-                                  <i class="material-icons">person_add</i>
-                                </div>
-                              </li>
-                              <li>
-                                <img alt="Ravi" src="assets/img/avatar-male-3.jpg" class="avatar" data-filter-by="alt" />
-                              </li>
-                            </ul>
-                            <div class="media-body">
-                              <div>
-                                <span class="h6" data-filter-by="text">Ravi</span>
-                                <span data-filter-by="text">was assigned to the task</span>
-                              </div>
-                              <span class="text-small" data-filter-by="text">5 days ago</span>
-                            </div>
-                          </div>
-                        </li>
-
-                        <li class="list-group-item">
-                          <div class="media align-items-center">
-                            <ul class="avatars">
-                              <li>
-                                <div class="avatar bg-primary">
-                                  <i class="material-icons">playlist_add</i>
-                                </div>
-                              </li>
-                              <li>
-                                <img alt="Claire" src="assets/img/avatar-female-1.jpg" class="avatar" data-filter-by="alt" />
-                              </li>
-                            </ul>
-                            <div class="media-body">
-                              <div>
-                                <span class="h6" data-filter-by="text">Claire</span>
-                                <span data-filter-by="text">added to the task checklist</span>
-                              </div>
-                              <span class="text-small" data-filter-by="text">5 days ago</span>
-                            </div>
-                          </div>
-                        </li>
-
-                        <li class="list-group-item">
-                          <div class="media align-items-center">
-                            <ul class="avatars">
-                              <li>
-                                <div class="avatar bg-primary">
-                                  <i class="material-icons">add</i>
-                                </div>
-                              </li>
-                              <li>
-                                <img alt="David" src="assets/img/avatar-male-4.jpg" class="avatar" data-filter-by="alt" />
-                              </li>
-                            </ul>
-                            <div class="media-body">
-                              <div>
-                                <span class="h6" data-filter-by="text">David</span>
-                                <span data-filter-by="text">started the task</span>
-                              </div>
-                              <span class="text-small" data-filter-by="text">6 days ago</span>
-                            </div>
-                          </div>
-                        </li>
-
+                        <Activity
+                           icon="playlist_add_check"
+                           image="assets/img/default-avatar.png"
+                           username="jaureguiomar"
+                           description="Testing description"
+                           time="Just now"
+                        />
+                        <Activity
+                           icon="playlist_add_check"
+                           image="assets/img/default-avatar.png"
+                           username="jaureguiomar"
+                           description="Testing description"
+                           time="Just now"
+                        />
+                        <Activity
+                           icon="playlist_add_check"
+                           image="assets/img/default-avatar.png"
+                           username="jaureguiomar"
+                           description="Testing description"
+                           time="Just now"
+                        />
+                        <Activity
+                           icon="playlist_add_check"
+                           image="assets/img/default-avatar.png"
+                           username="jaureguiomar"
+                           description="Testing description"
+                           time="Just now"
+                        />
+                        <Activity
+                           icon="playlist_add_check"
+                           image="assets/img/default-avatar.png"
+                           username="jaureguiomar"
+                           description="Testing description"
+                           time="Just now"
+                        />
+                        <Activity
+                           icon="playlist_add_check"
+                           image="assets/img/default-avatar.png"
+                           username="jaureguiomar"
+                           description="Testing description"
+                           time="Just now"
+                        />
                       </ol>
                     </div>
                   </div>
@@ -1195,185 +724,25 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-primary btn-round btn-floating btn-lg" type="button" data-toggle="collapse" data-target="#floating-chat" aria-expanded="false">
-          <i class="material-icons">chat_bubble</i>
-          <i class="material-icons">close</i>
-        </button>
-        <div class="collapse sidebar-floating" id="floating-chat">
-          <div class="sidebar-content">
-            <div class="chat-module" data-filter-list="chat-module-body">
-              <div class="chat-module-top">
-                <form>
-                  <div class="input-group input-group-round">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="material-icons">search</i>
-                      </span>
-                    </div>
-                    <input type="search" class="form-control filter-list-input" placeholder="Search chat" aria-label="Search Chat">
-                  </div>
-                </form>
-                <div class="chat-module-body">
-
-                  <div class="media chat-item">
-                    <img alt="Claire" src="assets/img/avatar-female-1.jpg" class="avatar" />
-                    <div class="media-body">
-                      <div class="chat-item-title">
-                        <span class="chat-item-author" data-filter-by="text">Claire</span>
-                        <span data-filter-by="text">4 days ago</span>
-                      </div>
-                      <div class="chat-item-body" data-filter-by="text">
-                        <p>Hey guys, just kicking things off here in the chat window. Hope you&#39;re all ready to tackle this great project. Let&#39;s smash some Brand Concept &amp; Design!</p>
-
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="media chat-item">
-                    <img alt="Peggy" src="assets/img/avatar-female-2.jpg" class="avatar" />
-                    <div class="media-body">
-                      <div class="chat-item-title">
-                        <span class="chat-item-author" data-filter-by="text">Peggy</span>
-                        <span data-filter-by="text">4 days ago</span>
-                      </div>
-                      <div class="chat-item-body" data-filter-by="text">
-                        <p>Nice one <a href="#">@Claire</a>, we&#39;ve got some killer ideas kicking about already.
-                          <img src="https://media.giphy.com/media/aTeHNLRLrwwwM/giphy.gif" alt="alt text" title="Thinking">
-                        </p>
-
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="media chat-item">
-                    <img alt="Marcus" src="assets/img/avatar-male-1.jpg" class="avatar" />
-                    <div class="media-body">
-                      <div class="chat-item-title">
-                        <span class="chat-item-author" data-filter-by="text">Marcus</span>
-                        <span data-filter-by="text">3 days ago</span>
-                      </div>
-                      <div class="chat-item-body" data-filter-by="text">
-                        <p>Roger that boss! <a href="">@Ravi</a> and I have already started gathering some stuff for the mood boards, excited to start! &#x1f525;</p>
-
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="media chat-item">
-                    <img alt="Ravi" src="assets/img/avatar-male-3.jpg" class="avatar" />
-                    <div class="media-body">
-                      <div class="chat-item-title">
-                        <span class="chat-item-author" data-filter-by="text">Ravi</span>
-                        <span data-filter-by="text">3 days ago</span>
-                      </div>
-                      <div class="chat-item-body" data-filter-by="text">
-                        <h1>&#x1f609;</h1>
-
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="media chat-item">
-                    <img alt="Claire" src="assets/img/avatar-female-1.jpg" class="avatar" />
-                    <div class="media-body">
-                      <div class="chat-item-title">
-                        <span class="chat-item-author" data-filter-by="text">Claire</span>
-                        <span data-filter-by="text">2 days ago</span>
-                      </div>
-                      <div class="chat-item-body" data-filter-by="text">
-                        <p>Can&#39;t wait! <a href="#">@David</a> how are we coming along with the <a href="#">Client Objective Meeting</a>?</p>
-
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="media chat-item">
-                    <img alt="David" src="assets/img/avatar-male-4.jpg" class="avatar" />
-                    <div class="media-body">
-                      <div class="chat-item-title">
-                        <span class="chat-item-author" data-filter-by="text">David</span>
-                        <span data-filter-by="text">Yesterday</span>
-                      </div>
-                      <div class="chat-item-body" data-filter-by="text">
-                        <p>Coming along nicely, we&#39;ve got a draft for the client questionnaire completed, take a look! &#x1f913;</p>
-
-                      </div>
-
-                      <div class="media media-attachment">
-                        <div class="avatar bg-primary">
-                          <i class="material-icons">insert_drive_file</i>
-                        </div>
-                        <div class="media-body">
-                          <a href="#" data-filter-by="text">questionnaire-draft.doc</a>
-                          <span data-filter-by="text">24kb Document</span>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="media chat-item">
-                    <img alt="Sally" src="assets/img/avatar-female-3.jpg" class="avatar" />
-                    <div class="media-body">
-                      <div class="chat-item-title">
-                        <span class="chat-item-author" data-filter-by="text">Sally</span>
-                        <span data-filter-by="text">2 hours ago</span>
-                      </div>
-                      <div class="chat-item-body" data-filter-by="text">
-                        <p>Great start guys, I&#39;ve added some notes to the task. We may need to make some adjustments to the last couple of items - but no biggie!</p>
-
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="media chat-item">
-                    <img alt="Peggy" src="assets/img/avatar-female-2.jpg" class="avatar" />
-                    <div class="media-body">
-                      <div class="chat-item-title">
-                        <span class="chat-item-author" data-filter-by="text">Peggy</span>
-                        <span data-filter-by="text">Just now</span>
-                      </div>
-                      <div class="chat-item-body" data-filter-by="text">
-                        <p>Well done <a href="#">@all</a>. See you all at 2 for the kick-off meeting. &#x1f91C;</p>
-
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="chat-module-bottom">
-                <form class="chat-form">
-                  <textarea class="form-control" placeholder="Type message" rows="1"></textarea>
-                  <div class="chat-form-buttons">
-                    <button type="button" class="btn btn-link">
-                      <i class="material-icons">tag_faces</i>
-                    </button>
-                    <div class="custom-file custom-file-naked">
-                      <input type="file" class="custom-file-input" id="customFile">
-                      <label class="custom-file-label" for="customFile">
-                        <i class="material-icons">attach_file</i>
-                      </label>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Avatar from "../components/Avatar.vue";
+import Checklist from "../components/Checklist.vue";
+import Note from "../components/Note.vue";
+import File from "../components/File.vue";
+import Activity from "../components/Activity.vue";
+
 export default defineComponent({
    name: "TaskView",
+   components: {
+      Avatar,
+      Checklist,
+      Note,
+      File,
+      Activity
+   },
    setup() {
       return {};
    }
