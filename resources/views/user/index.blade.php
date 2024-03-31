@@ -1,4 +1,4 @@
-@extends("layout.main")
+@extends("layout.nav-side")
 
 @section("title")
    User | Project Management

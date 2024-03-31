@@ -13,8 +13,8 @@
       <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
       @section("css-end")
       @endsection
-  </head>
-  <body>
+</head>
+<body>
    <div class="layout layout-nav-side">
       <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
          <a class="navbar-brand" href="index.html">
