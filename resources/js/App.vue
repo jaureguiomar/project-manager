@@ -1,5 +1,5 @@
 <template>
-   <h1 v-if="route == '/'">Home</h1>
+   <HomeView v-if="route == '/'" />
    <TeamView v-else-if="route == '/team'" />
    <ProjectView v-else-if="route == '/project'" />
    <TaskView v-else-if="route == '/task'" />
@@ -9,6 +9,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from "vue";
+import HomeView from "./views/HomeView.vue";
 import TeamView from "./views/TeamView.vue";
 import ProjectView from "./views/ProjectView.vue";
 import TaskView from "./views/TaskView.vue";
@@ -17,6 +18,7 @@ import KanbanView from "./views/KanbanView.vue";
 export default defineComponent({
    name: "App",
    components: {
+      HomeView,
       TeamView,
       ProjectView,
       TaskView,

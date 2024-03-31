@@ -1,4 +1,4 @@
-@extends("layout.nav-side")
+@extends($layoutCookie["layoutName"])
 
 @section("title")
    Home | Project Management
