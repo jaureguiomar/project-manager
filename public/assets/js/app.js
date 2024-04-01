@@ -19190,14 +19190,42 @@ __webpack_require__.r(__webpack_exports__);
   },
   setup: function setup() {
     var route = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)("");
+    var params = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
       var href = window.location.href;
       var hrefSanitized = href.replace("#", "");
       var hrefSplit = hrefSanitized.split("http://127.0.0.1:8001");
-      if (hrefSplit.length == 2) route.value = hrefSplit[1];
+      if (hrefSplit.length == 2) {
+        var hrefRoute = hrefSplit[1];
+        var hrefParamsSplit = hrefRoute.split("?");
+        var url = "";
+        var parameters = [];
+        if (hrefParamsSplit.length == 1) {
+          url = hrefParamsSplit[0];
+        } else if (hrefParamsSplit.length == 2) {
+          url = hrefParamsSplit[0];
+          var allParams = hrefParamsSplit[1];
+          var allParamsSplit = allParams.split("&");
+          for (var i = 0; i < allParamsSplit.length; i++) {
+            var param = allParamsSplit[i];
+            var paramSplit = param.split("=");
+            if (paramSplit.length == 2) {
+              parameters.push({
+                key: paramSplit[0],
+                value: paramSplit[1]
+              });
+            }
+          }
+        } else {
+          console.log("url format error (params)");
+        }
+        route.value = url;
+        params.value = parameters;
+      }
     });
     return {
-      route: route
+      route: route,
+      params: params
     };
   }
 }));
@@ -19825,6 +19853,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
   name: "HomView",
+  props: {
+    params: {
+      type: Array,
+      required: true
+    }
+  },
   setup: function setup() {
     var onLayoutToggle = function onLayoutToggle(layout) {
       setCookie("layout", layout.toString(), 60);
@@ -19874,6 +19908,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
   name: "KanbanView",
+  props: {
+    params: {
+      type: Array,
+      required: true
+    }
+  },
   setup: function setup() {
     return {};
   }
@@ -19912,6 +19952,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_1__.defineComponent)({
   name: "ProjectView",
+  props: {
+    params: {
+      type: Array,
+      required: true
+    }
+  },
   components: {
     Avatar: _components_Avatar_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     TaskSection: _components_TaskSection_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -19993,6 +20039,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
   name: "TaskView",
+  props: {
+    params: {
+      type: Array,
+      required: true
+    }
+  },
   components: {
     Avatar: _components_Avatar_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Checklist: _components_Checklist_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -20039,6 +20091,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_1__.defineComponent)({
   name: "TeamView",
+  props: {
+    params: {
+      type: Array,
+      required: true
+    }
+  },
   components: {
     Member: _components_Member_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     Avatar: _components_Avatar_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -20127,16 +20185,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_TaskView = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("TaskView");
   var _component_KanbanView = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("KanbanView");
   return _ctx.route == '/' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_HomeView, {
-    key: 0
-  })) : _ctx.route == '/team' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_TeamView, {
-    key: 1
-  })) : _ctx.route == '/project' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_ProjectView, {
-    key: 2
-  })) : _ctx.route == '/task' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_TaskView, {
-    key: 3
-  })) : _ctx.route == '/kanban' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_KanbanView, {
-    key: 4
-  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h1", _hoisted_1, "Error"));
+    key: 0,
+    params: _ctx.params
+  }, null, 8 /* PROPS */, ["params"])) : _ctx.route == '/team' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_TeamView, {
+    key: 1,
+    params: _ctx.params
+  }, null, 8 /* PROPS */, ["params"])) : _ctx.route == '/project' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_ProjectView, {
+    key: 2,
+    params: _ctx.params
+  }, null, 8 /* PROPS */, ["params"])) : _ctx.route == '/task' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_TaskView, {
+    key: 3,
+    params: _ctx.params
+  }, null, 8 /* PROPS */, ["params"])) : _ctx.route == '/kanban' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_KanbanView, {
+    key: 4,
+    params: _ctx.params
+  }, null, 8 /* PROPS */, ["params"])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h1", _hoisted_1, "Error"));
 }
 
 /***/ }),

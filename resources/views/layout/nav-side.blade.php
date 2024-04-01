@@ -48,12 +48,13 @@
                   </a>
                   <div id="submenu-2" class="collapse">
                      <ul class="nav nav-small flex-column">
-                        <li class="nav-item">
-                           <a class="nav-link" href="/team">Option 1</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="/team">Option 2</a>
-                        </li>
+                        @foreach($layout["sidebar"]["teams"] as $team)
+                           <li class="nav-item">
+                              <a class="nav-link" href="/team?id={{ $team->id }}">
+                                 {{ $team->name }}
+                              </a>
+                           </li>
+                        @endforeach
                      </ul>
                   </div>
                </li>

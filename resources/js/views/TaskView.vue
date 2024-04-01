@@ -302,7 +302,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 import Avatar from "../components/Avatar.vue";
 import Checklist from "../components/Checklist.vue";
 import Note from "../components/Note.vue";
@@ -311,9 +311,16 @@ import Activity from "../components/Activity.vue";
 import TaskUserManageModal from "../components/modals/TaskUserManageModal.vue";
 import TaskEditModal from "../components/modals/TaskEditModal.vue";
 import TaskNoteAddModal from "../components/modals/TaskNoteAddModal.vue";
+import { Route } from "../types/route";
 
 export default defineComponent({
    name: "TaskView",
+   props: {
+      params: {
+         type: Array as PropType<Route[]>,
+         required: true
+      }
+   },
    components: {
       Avatar,
       Checklist,

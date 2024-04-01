@@ -14,9 +14,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
+import { Route } from "../types/route";
+
 export default defineComponent({
    name: "HomView",
+   props: {
+      params: {
+         type: Array as PropType<Route[]>,
+         required: true
+      }
+   },
    setup() {
       const onLayoutToggle = (layout:number) => {
          setCookie("layout", layout.toString(), 60);

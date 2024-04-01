@@ -1,5 +1,8 @@
 <?php
 namespace App\Http\Controllers;
+use App\Models\Project;
+use App\Models\Task;
+use App\Models\Team;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -12,25 +15,32 @@ class Controller extends BaseController {
 
    public function __construct(Request $request) {
       // Layout
-      $layoutCookie = $request->cookie("layout");
-      if($layoutCookie)
-         $layoutCookie = intval($layoutCookie);
-      $layoutName = "";
-      if($layoutCookie == 1)
-         $layoutName = "layout.nav-side";
-      else if($layoutCookie == 2)
-         $layoutName = "layout.nav-top";
-      else if($layoutCookie == 3)
-         $layoutName = "layout.nav-top-sidebar";
+      $cookie = $request->cookie("layout");
+      if($cookie)
+         $cookie = intval($cookie);
+      $name = "";
+      if($cookie == 1)
+         $name = "layout.nav-side";
+      else if($cookie == 2)
+         $name = "layout.nav-top";
+      else if($cookie == 3)
+         $name = "layout.nav-top-sidebar";
       else
-         $layoutName = "layout.nav-side";
+         $name = "layout.nav-side";
 
       // Sidebar
-      // Code here...
+      $teams = Team::all();
+      $projects = Project::all();
+      $tasks = Task::all();
 
       View::share("layout", [
-         "layoutCookie" => $layoutCookie,
-         "layoutName" => $layoutName
+         "cookie" => $cookie,
+         "name" => $name,
+         "sidebar" => [
+            "teams" => $teams,
+            "projects" => $projects,
+            "tasks" => $tasks
+         ]
       ]);
    }
 }

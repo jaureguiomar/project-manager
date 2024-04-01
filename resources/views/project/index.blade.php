@@ -1,4 +1,4 @@
-@extends($layout["layoutName"])
+@extends($layout["name"])
 
 @section("title")
    Project | Project Management

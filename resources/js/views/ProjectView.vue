@@ -216,7 +216,7 @@
 
 <script lang="ts">
 import axios from "../utils/axios";
-import { defineComponent, ref, reactive } from "vue";
+import { defineComponent, PropType, ref, reactive } from "vue";
 import Avatar from "../components/Avatar.vue";
 import TaskSection from "../components/TaskSection.vue";
 import Activity from "../components/Activity.vue";
@@ -224,10 +224,17 @@ import File from "../components/File.vue";
 import ProjectUserManageModal from "../components/modals/ProjectUserManageModal.vue";
 import ProjectEditModal from "../components/modals/ProjectEditModal.vue";
 import ProjectTaskAddModal from "../components/modals/ProjectTaskAddModal.vue";
+import { Route } from "../types/route";
 import { ProjectAll } from "../types/project";
 
 export default defineComponent({
    name: "ProjectView",
+   props: {
+      params: {
+         type: Array as PropType<Route[]>,
+         required: true
+      }
+   },
    components: {
       Avatar,
       TaskSection,

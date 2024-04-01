@@ -136,19 +136,26 @@
 
 <script lang="ts">
 import axios from "../utils/axios";
-import { defineComponent, ref, reactive } from "vue";
+import { defineComponent, PropType, ref, reactive } from "vue";
 import Member from "../components/Member.vue";
 import Avatar from "../components/Avatar.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 import TeamInviteModal from "../components/modals/TeamInviteModal.vue";
 import TeamManageModal from "../components/modals/TeamManageModal.vue";
 import TeamNewModal from "../components/modals/TeamNewModal.vue";
+import { Route } from "../types/route";
 import { Team } from "../types/team";
 import { Project } from "../types/project";
 import { User } from "../types/user";
 
 export default defineComponent({
    name: "TeamView",
+   props: {
+      params: {
+         type: Array as PropType<Route[]>,
+         required: true
+      }
+   },
    components: {
       Member,
       Avatar,
