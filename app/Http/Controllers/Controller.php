@@ -11,10 +11,10 @@ class Controller extends BaseController {
    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
    public function __construct(Request $request) {
+      // Layout
       $layoutCookie = $request->cookie("layout");
       if($layoutCookie)
          $layoutCookie = intval($layoutCookie);
-
       $layoutName = "";
       if($layoutCookie == 1)
          $layoutName = "layout.nav-side";
@@ -25,7 +25,10 @@ class Controller extends BaseController {
       else
          $layoutName = "layout.nav-side";
 
-      View::share("layoutCookie", [
+      // Sidebar
+      // Code here...
+
+      View::share("layout", [
          "layoutCookie" => $layoutCookie,
          "layoutName" => $layoutName
       ]);

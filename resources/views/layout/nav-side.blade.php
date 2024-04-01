@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8">
-      <title>@yield("title")</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="A project management Bootstrap theme by Medium Rare">
-      <link href="assets/img/favicon.ico" rel="icon" type="image/x-icon">
-      @section("css-begin")
-      @endsection
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
-      <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
-      @section("css-end")
-      @endsection
+<head>
+   <meta charset="utf-8">
+   <title>@yield("title")</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="A project management Bootstrap theme by Medium Rare">
+   <link href="assets/img/favicon.ico" rel="icon" type="image/x-icon">
+   @section("css-begin")
+   @endsection
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
+   <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
+   @section("css-end")
+   @endsection
 </head>
 <body>
    <div class="layout layout-nav-side">
       <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-         <a class="navbar-brand" href="index.html">
+         <a class="navbar-brand" href="/">
             <img alt="Pipeline" src="assets/img/logo.svg" />
          </a>
          <div class="d-flex align-items-center">
@@ -30,69 +30,82 @@
                      <img alt="Image" src="assets/img/avatar-male-4.jpg" class="avatar" />
                   </a>
                   <div class="dropdown-menu dropdown-menu-right">
-                     <a href="nav-side-user.html" class="dropdown-item">Profile</a>
-                     <a href="utility-account-settings.html" class="dropdown-item">Account Settings</a>
-                     <a href="#" class="dropdown-item">Log Out</a>
+                     <a href="/user" class="dropdown-item">Profile</a>
+                     <a href="/settings" class="dropdown-item">Account Settings</a>
+                     <!-- <a href="#" class="dropdown-item">Log Out</a> -->
                   </div>
                </div>
             </div>
          </div>
          <div class="collapse navbar-collapse flex-column" id="navbar-collapse">
             <ul class="navbar-nav d-lg-block">
-            <li class="nav-item">
-               <a class="nav-link" href="index.html">Overview</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2">Pages</a>
-               <div id="submenu-2" class="collapse">
-                  <ul class="nav nav-small flex-column">
-                     <li class="nav-item">
-                        <a class="nav-link" href="pages-app.html">App Pages</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="pages-utility.html">Utility Pages</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="pages-layouts.html">Layouts</a>
-                     </li>
-                  </ul>
-               </div>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3">Components</a>
-               <div id="submenu-3" class="collapse">
-                  <ul class="nav nav-small flex-column">
-                     <li class="nav-item">
-                        <a class="nav-link" href="components-bootstrap.html">Bootstrap</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="components-pipeline.html">Pipeline</a>
-                     </li>
-                  </ul>
-               </div>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="documentation/index.html">Documentation</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="documentation/changelog.html">Changelog</a>
-            </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="{{ route('core:index') }}">Home</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2">
+                     Teams
+                  </a>
+                  <div id="submenu-2" class="collapse">
+                     <ul class="nav nav-small flex-column">
+                        <li class="nav-item">
+                           <a class="nav-link" href="/team">Option 1</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="/team">Option 2</a>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3">
+                     Projects
+                  </a>
+                  <div id="submenu-3" class="collapse">
+                     <ul class="nav nav-small flex-column">
+                        <li class="nav-item">
+                           <a class="nav-link" href="/project">Option 1</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="/project">Option 2</a>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4">
+                     Tasks
+                  </a>
+                  <div id="submenu-4" class="collapse">
+                     <ul class="nav nav-small flex-column">
+                        <li class="nav-item">
+                           <a class="nav-link" href="/task">Option 1</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="/task">Option 2</a>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="/settings">Settings</a>
+               </li>
             </ul>
             <hr>
             <div class="d-none d-lg-block w-100">
                <span class="text-small text-muted">Quick Links</span>
                <ul class="nav nav-small flex-column mt-2">
                   <li class="nav-item">
-                     <a href="nav-side-team.html" class="nav-link">Team Overview</a>
+                     <a href="/" class="nav-link">Team Overview</a>
                   </li>
                   <li class="nav-item">
-                     <a href="nav-side-project.html" class="nav-link">Project</a>
+                     <a href="/" class="nav-link">Project</a>
                   </li>
                   <li class="nav-item">
-                     <a href="nav-side-task.html" class="nav-link">Single Task</a>
+                     <a href="/" class="nav-link">Single Task</a>
                   </li>
                   <li class="nav-item">
-                     <a href="nav-side-kanban-board.html" class="nav-link">Kanban Board</a>
+                     <a href="/" class="nav-link">Kanban Board</a>
                   </li>
                </ul>
                <hr>
@@ -126,9 +139,9 @@
                   <img alt="Image" src="assets/img/avatar-male-4.jpg" class="avatar" />
                </a>
                <div class="dropdown-menu">
-                  <a href="nav-side-user.html" class="dropdown-item">Profile</a>
-                  <a href="utility-account-settings.html" class="dropdown-item">Account Settings</a>
-                  <a href="#" class="dropdown-item">Log Out</a>
+                  <a href="/user" class="dropdown-item">Profile</a>
+                  <a href="/settings" class="dropdown-item">Account Settings</a>
+                  <!-- <a href="#" class="dropdown-item">Log Out</a> -->
                </div>
             </div>
          </div>

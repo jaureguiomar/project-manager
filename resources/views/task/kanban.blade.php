@@ -1,4 +1,4 @@
-@extends("layout.nav-side")
+@extends($layout["layoutName"])
 
 @section("title")
    Kanban | Project Management
