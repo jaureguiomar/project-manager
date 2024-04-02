@@ -50,7 +50,7 @@
                      <ul class="nav nav-small flex-column">
                         @foreach($layout["sidebar"]["teams"] as $team)
                            <li class="nav-item">
-                              <a class="nav-link" href="/team?id={{ $team->id }}">
+                              <a class="nav-link" href="/team?idTeam={{ $team->id }}">
                                  {{ $team->name }}
                               </a>
                            </li>
@@ -64,12 +64,13 @@
                   </a>
                   <div id="submenu-3" class="collapse">
                      <ul class="nav nav-small flex-column">
-                        <li class="nav-item">
-                           <a class="nav-link" href="/project">Option 1</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="/project">Option 2</a>
-                        </li>
+                        @foreach($layout["sidebar"]["projects"] as $project)
+                           <li class="nav-item">
+                              <a class="nav-link" href="/project?idTeam={{ $project->team_id }}&idProject={{ $project->id }}">
+                                 {{ $project->name }}
+                              </a>
+                           </li>
+                        @endforeach
                      </ul>
                   </div>
                </li>
@@ -79,12 +80,13 @@
                   </a>
                   <div id="submenu-4" class="collapse">
                      <ul class="nav nav-small flex-column">
-                        <li class="nav-item">
-                           <a class="nav-link" href="/task">Option 1</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="/task">Option 2</a>
-                        </li>
+                        @foreach($layout["sidebar"]["tasks"] as $task)
+                           <li class="nav-item">
+                              <a class="nav-link" href="/task?idTeam={{ $task->team_id }}&idProject={{ $task->project_id }}&idTask={{ $task->id }}">
+                                 {{ $task->name }}
+                              </a>
+                           </li>
+                        @endforeach
                      </ul>
                   </div>
                </li>
