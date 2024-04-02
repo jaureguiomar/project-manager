@@ -4,6 +4,7 @@
    <ProjectView :params="params" v-else-if="route == '/project'" />
    <TaskView :params="params" v-else-if="route == '/task'" />
    <KanbanView :params="params" v-else-if="route == '/kanban'" />
+   <SettingsView :params="params" v-else-if="route == '/settings'" />
    <h1 v-else>Error</h1>
 </template>
 
@@ -14,6 +15,7 @@ import TeamView from "./views/TeamView.vue";
 import ProjectView from "./views/ProjectView.vue";
 import TaskView from "./views/TaskView.vue";
 import KanbanView from "./views/KanbanView.vue";
+import SettingsView from "./views/SettingsView.vue";
 import { Route } from "./types/route";
 
 export default defineComponent({
@@ -23,7 +25,8 @@ export default defineComponent({
       TeamView,
       ProjectView,
       TaskView,
-      KanbanView
+      KanbanView,
+      SettingsView
    },
    setup() {
       const route = ref("");

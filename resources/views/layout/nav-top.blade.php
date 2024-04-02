@@ -7,12 +7,12 @@
    <meta name="description" content="A project management Bootstrap theme by Medium Rare">
    <link href="assets/img/favicon.ico" rel="icon" type="image/x-icon">
    @section("css-begin")
-   @endsection
+   @show
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
    <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
    @section("css-end")
-   @endsection
+   @show
 </head>
 <body>
    <div class="layout layout-nav-top">
@@ -110,11 +110,8 @@
          </div>
       </div>
       <div class="main-container">
-         <div id="app">
-            <App />
-            @section("content")
-            @endsection
-         </div>
+         @section("content")
+         @show
 
          @include("components.chat-bubble")
          <div class="collapse sidebar-floating" id="floating-chat">
@@ -124,7 +121,7 @@
    </div>
 
    @section("js-begin")
-   @endsection
+   @show
    <!-- Required vendor scripts (Do not remove) -->
    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
    <script type="text/javascript" src="assets/js/popper.min.js"></script>
@@ -146,7 +143,7 @@
    <!-- Required theme scripts (Do not remove) -->
    <script type="text/javascript" src="assets/js/theme.js"></script>
    @section("js-end")
-   @endsection
+   @show
    <script type="text/javascript" src="{{ mix('assets/js/app.js') }}"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CoreController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
@@ -36,4 +37,7 @@ Route::prefix("kanban")->name("kanban:")->group(function() { // Add together wit
 });
 Route::prefix("user")->name("user:")->group(function() {
    Route::get("/", [UserController::class, "index"])->name("index");
+});
+Route::prefix("settings")->name("settings:")->group(function() {
+   Route::get("/", [SettingsController::class, "index"])->name("index");
 });

@@ -1,7 +1,7 @@
 @extends($layout["name"])
 
 @section("title")
-   Project | Project Management
+   Settings | Project Management
 @endsection
 
 @section("css-begin")
@@ -10,6 +10,8 @@
 @endsection
 
 @section("content")
+   <h1>Settings from PHP</h1>
+
    <div id="app">
       <App />
    </div>

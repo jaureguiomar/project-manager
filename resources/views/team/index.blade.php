@@ -10,7 +10,9 @@
 @endsection
 
 @section("content")
-   <App />
+   <div id="app">
+      <App />
+   </div>
 @endsection
 
 @section("js-begin")
