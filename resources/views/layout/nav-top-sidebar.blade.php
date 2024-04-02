@@ -30,8 +30,8 @@
                      <img alt="Image" src="assets/img/avatar-male-4.jpg" class="avatar" />
                   </a>
                   <div class="dropdown-menu dropdown-menu-right">
-                     <a href="nav-side-user.html" class="dropdown-item">Profile</a>
-                     <a href="utility-account-settings.html" class="dropdown-item">Account Settings</a>
+                     <a href="/user" class="dropdown-item">Profile</a>
+                     <a href="/settings" class="dropdown-item">Account Settings</a>
                      <a href="#" class="dropdown-item">Log Out</a>
                   </div>
                </div>
@@ -40,32 +40,52 @@
          <div class="collapse navbar-collapse justify-content-between" id="navbar-collapse">
             <ul class="navbar-nav">
                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Overview</a>
+                  <a class="nav-link" href="{{ route('core:index') }}">Home</a>
                </li>
                <li class="nav-item">
                   <div class="dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" id="nav-dropdown-2">Pages</a>
+                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" id="nav-dropdown-2">
+                        Teams
+                     </a>
                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="pages-app.html">App Pages</a>
-                        <a class="dropdown-item" href="pages-utility.html">Utility Pages</a>
-                        <a class="dropdown-item" href="pages-layouts.html">Layouts</a>
+                        @foreach($layout["sidebar"]["teams"] as $team)
+                           <a class="dropdown-item" href="/team?idTeam={{ $team->id }}">
+                              {{ $team->name }}
+                           </a>
+                        @endforeach
                      </div>
                   </div>
                </li>
                <li class="nav-item">
                   <div class="dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" id="nav-dropdown-3">Components</a>
+                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" id="nav-dropdown-3">
+                        Projects
+                     </a>
                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="components-bootstrap.html">Bootstrap</a>
-                        <a class="dropdown-item" href="components-pipeline.html">Pipeline</a>
+                        @foreach($layout["sidebar"]["projects"] as $project)
+                           <a class="dropdown-item" href="/project?idTeam={{ $project->team_id }}&idProject={{ $project->id }}">
+                              {{ $project->name }}
+                           </a>
+                        @endforeach
                      </div>
                   </div>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="documentation/index.html">Documentation</a>
+                  <div class="dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" id="nav-dropdown-3">
+                        Tasks
+                     </a>
+                     <div class="dropdown-menu">
+                        @foreach($layout["sidebar"]["tasks"] as $task)
+                           <a class="dropdown-item" href="/task?idTeam={{ $task->team_id }}&idProject={{ $task->project_id }}&idTask={{ $task->id }}">
+                              {{ $task->name }}
+                           </a>
+                        @endforeach
+                     </div>
+                  </div>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="documentation/changelog.html">Changelog</a>
+                  <a class="nav-link" href="/settings">Settings</a>
                </li>
             </ul>
             <div class="d-lg-flex align-items-center">
@@ -95,8 +115,8 @@
                         <img alt="Image" src="assets/img/avatar-male-4.jpg" class="avatar" />
                      </a>
                      <div class="dropdown-menu dropdown-menu-right">
-                        <a href="nav-side-user.html" class="dropdown-item">Profile</a>
-                        <a href="utility-account-settings.html" class="dropdown-item">Account Settings</a>
+                        <a href="/user" class="dropdown-item">Profile</a>
+                        <a href="/settings" class="dropdown-item">Account Settings</a>
                         <a href="#" class="dropdown-item">Log Out</a>
                      </div>
                   </div>
@@ -112,22 +132,154 @@
             </button>
             <div class="sidebar collapse" id="sidebar-collapse">
                <div class="sidebar-content">
-                  <div class="p-5 text-center">
-                     <small>Sidebar Content Here</small>
+                  <div class="chat-module" data-filter-list="chat-module-body">
+                     <div class="chat-module-top">
+                        <form>
+                        <div class="input-group input-group-round">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text">
+                              <i class="material-icons">search</i>
+                              </span>
+                           </div>
+                           <input type="search" class="form-control filter-list-input" placeholder="Search chat" aria-label="Search Chat">
+                        </div>
+                        </form>
+                        <div class="chat-module-body">
+                           <div class="media chat-item">
+                              <img alt="Claire" src="assets/img/avatar-female-1.jpg" class="avatar" />
+                              <div class="media-body">
+                                 <div class="chat-item-title">
+                                 <span class="chat-item-author" data-filter-by="text">Claire</span>
+                                 <span data-filter-by="text">4 days ago</span>
+                                 </div>
+                                 <div class="chat-item-body" data-filter-by="text">
+                                 <p>Hey guys, just kicking things off here in the chat window. Hope you&#39;re all ready to tackle this great project. Let&#39;s smash some Brand Concept &amp; Design!</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="media chat-item">
+                              <img alt="Peggy" src="assets/img/avatar-female-2.jpg" class="avatar" />
+                              <div class="media-body">
+                                 <div class="chat-item-title">
+                                 <span class="chat-item-author" data-filter-by="text">Peggy</span>
+                                 <span data-filter-by="text">4 days ago</span>
+                                 </div>
+                                 <div class="chat-item-body" data-filter-by="text">
+                                 <p>Nice one <a href="#">@Claire</a>, we&#39;ve got some killer ideas kicking about already.
+                                    <img src="https://media.giphy.com/media/aTeHNLRLrwwwM/giphy.gif" alt="alt text" title="Thinking">
+                                 </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="media chat-item">
+                              <img alt="Marcus" src="assets/img/avatar-male-1.jpg" class="avatar" />
+                              <div class="media-body">
+                                 <div class="chat-item-title">
+                                 <span class="chat-item-author" data-filter-by="text">Marcus</span>
+                                 <span data-filter-by="text">3 days ago</span>
+                                 </div>
+                                 <div class="chat-item-body" data-filter-by="text">
+                                 <p>Roger that boss! <a href="">@Ravi</a> and I have already started gathering some stuff for the mood boards, excited to start! &#x1f525;</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="media chat-item">
+                              <img alt="Ravi" src="assets/img/avatar-male-3.jpg" class="avatar" />
+                              <div class="media-body">
+                                 <div class="chat-item-title">
+                                 <span class="chat-item-author" data-filter-by="text">Ravi</span>
+                                 <span data-filter-by="text">3 days ago</span>
+                                 </div>
+                                 <div class="chat-item-body" data-filter-by="text">
+                                 <h1>&#x1f609;</h1>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="media chat-item">
+                              <img alt="Claire" src="assets/img/avatar-female-1.jpg" class="avatar" />
+                              <div class="media-body">
+                                 <div class="chat-item-title">
+                                 <span class="chat-item-author" data-filter-by="text">Claire</span>
+                                 <span data-filter-by="text">2 days ago</span>
+                                 </div>
+                                 <div class="chat-item-body" data-filter-by="text">
+                                 <p>Can&#39;t wait! <a href="#">@David</a> how are we coming along with the <a href="#">Client Objective Meeting</a>?</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="media chat-item">
+                              <img alt="David" src="assets/img/avatar-male-4.jpg" class="avatar" />
+                              <div class="media-body">
+                                 <div class="chat-item-title">
+                                 <span class="chat-item-author" data-filter-by="text">David</span>
+                                 <span data-filter-by="text">Yesterday</span>
+                                 </div>
+                                 <div class="chat-item-body" data-filter-by="text">
+                                    <p>Coming along nicely, we&#39;ve got a draft for the client questionnaire completed, take a look! &#x1f913;</p>
+                                 </div>
+
+                                 <div class="media media-attachment">
+                                    <div class="avatar bg-primary">
+                                       <i class="material-icons">insert_drive_file</i>
+                                    </div>
+                                    <div class="media-body">
+                                       <a href="#" data-filter-by="text">questionnaire-draft.doc</a>
+                                       <span data-filter-by="text">24kb Document</span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="media chat-item">
+                              <img alt="Sally" src="assets/img/avatar-female-3.jpg" class="avatar" />
+                              <div class="media-body">
+                                 <div class="chat-item-title">
+                                    <span class="chat-item-author" data-filter-by="text">Sally</span>
+                                    <span data-filter-by="text">2 hours ago</span>
+                                 </div>
+                                 <div class="chat-item-body" data-filter-by="text">
+                                    <p>Great start guys, I&#39;ve added some notes to the task. We may need to make some adjustments to the last couple of items - but no biggie!</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="media chat-item">
+                              <img alt="Peggy" src="assets/img/avatar-female-2.jpg" class="avatar" />
+                              <div class="media-body">
+                                 <div class="chat-item-title">
+                                    <span class="chat-item-author" data-filter-by="text">Peggy</span>
+                                    <span data-filter-by="text">Just now</span>
+                                 </div>
+                                 <div class="chat-item-body" data-filter-by="text">
+                                    <p>Well done <a href="#">@all</a>. See you all at 2 for the kick-off meeting. &#x1f91C;</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="chat-module-bottom">
+                        <form class="chat-form">
+                           <textarea class="form-control" placeholder="Type message" rows="1"></textarea>
+                           <div class="chat-form-buttons">
+                              <button type="button" class="btn btn-link">
+                                 <i class="material-icons">tag_faces</i>
+                              </button>
+                              <div class="custom-file custom-file-naked">
+                                 <input type="file" class="custom-file-input" id="customFile">
+                                 <label class="custom-file-label" for="customFile">
+                                    <i class="material-icons">attach_file</i>
+                                 </label>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
          <div class="content-container">
-            <div class="text-center d-flex align-items-center justify-content-center pt-5">
-               <div>
-                  <img alt="Empty State" src="assets/img/empty-state.svg" class="w-50" style="opacity:.8" />
-                  <span class="h3 d-block mt-3">Content Here</span>
-                  <p>
-                     Add your page content here
-                  </p>
-                  <a class="btn btn-primary btn-sm" href="pages-layouts.html">Back to Page Layouts</a>
-               </div>
+            <div id="app">
+               <App />
+               @section("content")
+               @endsection
             </div>
          </div>
       </div>

@@ -30,8 +30,8 @@
                      <img alt="Image" src="assets/img/avatar-male-4.jpg" class="avatar" />
                   </a>
                   <div class="dropdown-menu dropdown-menu-right">
-                     <a href="nav-side-user.html" class="dropdown-item">Profile</a>
-                     <a href="utility-account-settings.html" class="dropdown-item">Account Settings</a>
+                     <a href="/user" class="dropdown-item">Profile</a>
+                     <a href="/settings" class="dropdown-item">Account Settings</a>
                      <a href="#" class="dropdown-item">Log Out</a>
                   </div>
                </div>
@@ -40,32 +40,52 @@
          <div class="collapse navbar-collapse justify-content-between" id="navbar-collapse">
             <ul class="navbar-nav">
                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Overview</a>
+                  <a class="nav-link" href="{{ route('core:index') }}">Home</a>
                </li>
                <li class="nav-item">
                   <div class="dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" id="nav-dropdown-2">Pages</a>
+                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" id="nav-dropdown-2">
+                        Teams
+                     </a>
                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="pages-app.html">App Pages</a>
-                        <a class="dropdown-item" href="pages-utility.html">Utility Pages</a>
-                        <a class="dropdown-item" href="pages-layouts.html">Layouts</a>
+                        @foreach($layout["sidebar"]["teams"] as $team)
+                           <a class="dropdown-item" href="/team?idTeam={{ $team->id }}">
+                              {{ $team->name }}
+                           </a>
+                        @endforeach
                      </div>
                   </div>
                </li>
                <li class="nav-item">
                   <div class="dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" id="nav-dropdown-3">Components</a>
+                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" id="nav-dropdown-3">
+                        Projects
+                     </a>
                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="components-bootstrap.html">Bootstrap</a>
-                        <a class="dropdown-item" href="components-pipeline.html">Pipeline</a>
+                        @foreach($layout["sidebar"]["projects"] as $project)
+                           <a class="dropdown-item" href="/project?idTeam={{ $project->team_id }}&idProject={{ $project->id }}">
+                              {{ $project->name }}
+                           </a>
+                        @endforeach
                      </div>
                   </div>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="documentation/index.html">Documentation</a>
+                  <div class="dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" id="nav-dropdown-3">
+                        Tasks
+                     </a>
+                     <div class="dropdown-menu">
+                        @foreach($layout["sidebar"]["tasks"] as $task)
+                           <a class="dropdown-item" href="/task?idTeam={{ $task->team_id }}&idProject={{ $task->project_id }}&idTask={{ $task->id }}">
+                              {{ $task->name }}
+                           </a>
+                        @endforeach
+                     </div>
+                  </div>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="documentation/changelog.html">Changelog</a>
+                  <a class="nav-link" href="/settings">Settings</a>
                </li>
             </ul>
             <div class="d-lg-flex align-items-center">
@@ -95,8 +115,8 @@
                         <img alt="Image" src="assets/img/avatar-male-4.jpg" class="avatar" />
                      </a>
                      <div class="dropdown-menu dropdown-menu-right">
-                        <a href="nav-side-user.html" class="dropdown-item">Profile</a>
-                        <a href="utility-account-settings.html" class="dropdown-item">Account Settings</a>
+                        <a href="/user" class="dropdown-item">Profile</a>
+                        <a href="/settings" class="dropdown-item">Account Settings</a>
                         <a href="#" class="dropdown-item">Log Out</a>
                      </div>
                   </div>

@@ -32,7 +32,7 @@
                   <div class="dropdown-menu dropdown-menu-right">
                      <a href="/user" class="dropdown-item">Profile</a>
                      <a href="/settings" class="dropdown-item">Account Settings</a>
-                     <!-- <a href="#" class="dropdown-item">Log Out</a> -->
+                     <a href="#" class="dropdown-item">Log Out</a>
                   </div>
                </div>
             </div>
@@ -144,7 +144,7 @@
                <div class="dropdown-menu">
                   <a href="/user" class="dropdown-item">Profile</a>
                   <a href="/settings" class="dropdown-item">Account Settings</a>
-                  <!-- <a href="#" class="dropdown-item">Log Out</a> -->
+                  <a href="#" class="dropdown-item">Log Out</a>
                </div>
             </div>
          </div>

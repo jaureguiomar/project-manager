@@ -7,7 +7,7 @@
          <div class="col-12">
             <button class="mr-2" @click="onLayoutToggle(1)">Nav side</button>
             <button class="mr-2" @click="onLayoutToggle(2)">Nav top</button>
-            <button disabled @click="onLayoutToggle(3)">Nav top sidebar</button>
+            <button @click="onLayoutToggle(3)">Nav top sidebar</button>
          </div>
       </div>
    </div>

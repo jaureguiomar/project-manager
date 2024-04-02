@@ -22303,7 +22303,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return _ctx.onLayoutToggle(2);
     })
   }, "Nav top"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    disabled: "",
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return _ctx.onLayoutToggle(3);
     })
