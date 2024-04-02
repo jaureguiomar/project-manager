@@ -2,7 +2,7 @@
    <div class="navbar bg-white breadcrumb-bar">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Overview</a>
+              <li class="breadcrumb-item"><a href="index.html">Home</a>
               </li>
               <li class="breadcrumb-item"><a href="pages-app.html#">App Pages</a>
               </li>
