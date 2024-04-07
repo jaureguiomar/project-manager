@@ -8,8 +8,8 @@
             <img alt="Image" src="assets/img/avatar-male-4.jpg" class="avatar" />
          </a>
          <div class="dropdown-menu dropdown-menu-right">
-            <a href="/user" class="dropdown-item">Profile</a>
-            <a href="/settings" class="dropdown-item">Account Settings</a>
+            <a href="{{ route('user:index') }}" class="dropdown-item">Profile</a>
+            <a href="{{ route('settings:index') }}" class="dropdown-item">Account Settings</a>
             <a href="#" class="dropdown-item">Log Out</a>
          </div>
       </div>

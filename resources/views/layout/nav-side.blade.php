@@ -58,7 +58,14 @@
                      <ul class="nav nav-small flex-column">
                         @foreach($layout["sidebar"]["projects"] as $project)
                            <li class="nav-item">
-                              <a class="nav-link" href="/project?idTeam={{ $project->team_id }}&idProject={{ $project->id }}">
+                              <a class="nav-link" href="
+                                 {{
+                                    route('project:index', [
+                                       'idTeam' => $project->team_id,
+                                       'idProject' => $project->id
+                                    ])
+                                 }}"
+                              >
                                  {{ $project->name }}
                               </a>
                            </li>
@@ -74,7 +81,15 @@
                      <ul class="nav nav-small flex-column">
                         @foreach($layout["sidebar"]["tasks"] as $task)
                            <li class="nav-item">
-                              <a class="nav-link" href="/task?idTeam={{ $task->team_id }}&idProject={{ $task->project_id }}&idTask={{ $task->id }}">
+                              <a class="nav-link" href="
+                                 {{
+                                    route('task:index', [
+                                       'idTeam' => $task->team_id,
+                                       'idProject' => $task->project_id,
+                                       'idTask' => $task->id
+                                    ])
+                                 }}"
+                              >
                                  {{ $task->name }}
                               </a>
                            </li>
@@ -83,7 +98,7 @@
                   </div>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="/settings">Settings</a>
+                  <a class="nav-link" href="{{ route('settings:index') }}">Settings</a>
                </li>
             </ul>
             <hr>
@@ -91,16 +106,16 @@
                <span class="text-small text-muted">Quick Links</span>
                <ul class="nav nav-small flex-column mt-2">
                   <li class="nav-item">
-                     <a href="/" class="nav-link">Team Overview</a>
+                     <a href="{{ route('core:index') }}" class="nav-link">Team Overview</a>
                   </li>
                   <li class="nav-item">
-                     <a href="/" class="nav-link">Project</a>
+                     <a href="{{ route('core:index') }}" class="nav-link">Project</a>
                   </li>
                   <li class="nav-item">
-                     <a href="/" class="nav-link">Single Task</a>
+                     <a href="{{ route('core:index') }}" class="nav-link">Single Task</a>
                   </li>
                   <li class="nav-item">
-                     <a href="/" class="nav-link">Kanban Board</a>
+                     <a href="{{ route('core:index') }}" class="nav-link">Kanban Board</a>
                   </li>
                </ul>
                <hr>
@@ -121,9 +136,9 @@
                      Add New
                   </button>
                   <div class="dropdown-menu">
-                     <a class="dropdown-item" href="#">Team</a>
-                     <a class="dropdown-item" href="#">Project</a>
-                     <a class="dropdown-item" href="#">Task</a>
+                     <a class="dropdown-item" href="{{ route('core:index') }}">Team</a>
+                     <a class="dropdown-item" href="{{ route('core:index') }}">Project</a>
+                     <a class="dropdown-item" href="{{ route('core:index') }}">Task</a>
                   </div>
                </div>
             </div>
@@ -134,8 +149,8 @@
                   <img alt="Image" src="assets/img/avatar-male-4.jpg" class="avatar" />
                </a>
                <div class="dropdown-menu">
-                  <a href="/user" class="dropdown-item">Profile</a>
-                  <a href="/settings" class="dropdown-item">Account Settings</a>
+                  <a href="{{ route('user:index') }}" class="dropdown-item">Profile</a>
+                  <a href="{{ route('settings:index') }}" class="dropdown-item">Account Settings</a>
                   <a href="#" class="dropdown-item">Log Out</a>
                </div>
             </div>
