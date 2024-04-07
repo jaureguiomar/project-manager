@@ -166,7 +166,8 @@ export default defineComponent({
       TeamNewModal
    },
    setup(props) {
-      const idTeam = ref(1);
+      const params = getParams(props.params);
+      const idTeam = ref(params.idTeam);
       const team = reactive<Team>({
          id: -1,
          is_active: -1,
@@ -177,10 +178,6 @@ export default defineComponent({
       });
       const projects = ref<Project[]>([]);
       const users = ref<User[]>([]);
-
-      const result = getParams(props.params);
-      console.log("-----");
-      console.log("result", result);
 
       axios.get<Team>(`/v1/team/${ idTeam.value }`)
          .then((response) => {

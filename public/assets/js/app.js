@@ -20139,7 +20139,8 @@ __webpack_require__.r(__webpack_exports__);
     TeamNewModal: _components_modals_TeamNewModal_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
   },
   setup: function setup(props) {
-    var idTeam = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(1);
+    var params = (0,_mixins_get_params__WEBPACK_IMPORTED_MODULE_8__.getParams)(props.params);
+    var idTeam = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(params.idTeam);
     var team = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
       id: -1,
       is_active: -1,
@@ -20150,9 +20151,6 @@ __webpack_require__.r(__webpack_exports__);
     });
     var projects = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)([]);
     var users = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)([]);
-    var result = (0,_mixins_get_params__WEBPACK_IMPORTED_MODULE_8__.getParams)(props.params);
-    console.log("-----");
-    console.log("result", result);
     _utils_axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("/v1/team/".concat(idTeam.value)).then(function (response) {
       if (response.data) {
         var data = response.data;
@@ -26123,13 +26121,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getParams: () => (/* binding */ getParams)
 /* harmony export */ });
 var getParams = function getParams(params) {
-  console.log("-----");
-  console.log("params", params);
-  // const result = [];
-  // for(let i = 0; i < params.length; i++) {
-  //    const param = params[i];
-  // }
-  // return result;
+  var result = {};
+  for (var i = 0; i < params.length; i++) {
+    var param = params[i];
+    result[param.key] = param.value;
+  }
+  return result;
 };
 
 /***/ }),
