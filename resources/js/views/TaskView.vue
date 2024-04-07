@@ -311,13 +311,13 @@ import Activity from "../components/Activity.vue";
 import TaskUserManageModal from "../components/modals/TaskUserManageModal.vue";
 import TaskEditModal from "../components/modals/TaskEditModal.vue";
 import TaskNoteAddModal from "../components/modals/TaskNoteAddModal.vue";
-import { Route } from "../types/route";
+import { Param } from "../types/param";
 
 export default defineComponent({
    name: "TaskView",
    props: {
       params: {
-         type: Array as PropType<Route[]>,
+         type: Array as PropType<Param[]>,
          required: true
       }
    },
@@ -336,3 +336,4 @@ export default defineComponent({
    }
 });
 </script>
+../types/param

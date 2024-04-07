@@ -224,14 +224,14 @@ import File from "../components/File.vue";
 import ProjectUserManageModal from "../components/modals/ProjectUserManageModal.vue";
 import ProjectEditModal from "../components/modals/ProjectEditModal.vue";
 import ProjectTaskAddModal from "../components/modals/ProjectTaskAddModal.vue";
-import { Route } from "../types/route";
+import { Param } from "../types/param";
 import { ProjectAll } from "../types/project";
 
 export default defineComponent({
    name: "ProjectView",
    props: {
       params: {
-         type: Array as PropType<Route[]>,
+         type: Array as PropType<Param[]>,
          required: true
       }
    },
@@ -287,3 +287,4 @@ export default defineComponent({
    }
 });
 </script>
+../types/param

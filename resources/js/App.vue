@@ -16,7 +16,7 @@ import ProjectView from "./views/ProjectView.vue";
 import TaskView from "./views/TaskView.vue";
 import KanbanView from "./views/KanbanView.vue";
 import SettingsView from "./views/SettingsView.vue";
-import { Route } from "./types/route";
+import { Param } from "./types/param";
 
 export default defineComponent({
    name: "App",
@@ -30,7 +30,7 @@ export default defineComponent({
    },
    setup() {
       const route = ref("");
-      const params = ref<Route[]>([]);
+      const params = ref<Param[]>([]);
 
       onMounted(() => {
          const href = window.location.href;
@@ -40,7 +40,7 @@ export default defineComponent({
             const hrefRoute = hrefSplit[1];
             const hrefParamsSplit = hrefRoute.split("?");
             let url = "";
-            let parameters:Route[] = [];
+            let parameters:Param[] = [];
             if(hrefParamsSplit.length == 1) {
                url = hrefParamsSplit[0];
             } else if(hrefParamsSplit.length == 2) {
@@ -73,3 +73,4 @@ export default defineComponent({
    }
 });
 </script>
+./types/param

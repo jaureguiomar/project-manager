@@ -143,7 +143,8 @@ import ProjectCard from "../components/ProjectCard.vue";
 import TeamInviteModal from "../components/modals/TeamInviteModal.vue";
 import TeamManageModal from "../components/modals/TeamManageModal.vue";
 import TeamNewModal from "../components/modals/TeamNewModal.vue";
-import { Route } from "../types/route";
+import { getParams } from "../mixins/get-params";
+import { Param } from "../types/param";
 import { Team } from "../types/team";
 import { Project } from "../types/project";
 import { User } from "../types/user";
@@ -152,7 +153,7 @@ export default defineComponent({
    name: "TeamView",
    props: {
       params: {
-         type: Array as PropType<Route[]>,
+         type: Array as PropType<Param[]>,
          required: true
       }
    },
@@ -164,7 +165,7 @@ export default defineComponent({
       TeamManageModal,
       TeamNewModal
    },
-   setup() {
+   setup(props) {
       const idTeam = ref(1);
       const team = reactive<Team>({
          id: -1,
@@ -176,6 +177,10 @@ export default defineComponent({
       });
       const projects = ref<Project[]>([]);
       const users = ref<User[]>([]);
+
+      const result = getParams(props.params);
+      console.log("-----");
+      console.log("result", result);
 
       axios.get<Team>(`/v1/team/${ idTeam.value }`)
          .then((response) => {
@@ -227,3 +232,5 @@ export default defineComponent({
    }
 });
 </script>
+../types/param
+../mixins/get-params

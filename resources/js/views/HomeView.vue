@@ -15,13 +15,13 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { Route } from "../types/route";
+import { Param } from "../types/param";
 
 export default defineComponent({
    name: "HomView",
    props: {
       params: {
-         type: Array as PropType<Route[]>,
+         type: Array as PropType<Param[]>,
          required: true
       }
    },
@@ -58,3 +58,4 @@ export default defineComponent({
    }
 });
 </script>
+../types/param

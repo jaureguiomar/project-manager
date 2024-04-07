@@ -17,7 +17,7 @@
 <body>
    <div class="layout layout-nav-side">
       <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-         <a class="navbar-brand" href="/">
+         <a class="navbar-brand" href="{{ route('core:index') }}">
             <img alt="Pipeline" src="assets/img/logo.svg" />
          </a>
          @include("components.navbar-responsive")
@@ -28,14 +28,21 @@
                   <a class="nav-link" href="{{ route('core:index') }}">Home</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2">
+                  <a
+                     class="nav-link"
+                     href="#"
+                     data-toggle="collapse"
+                     aria-expanded="false"
+                     data-target="#submenu-2"
+                     aria-controls="submenu-2"
+                  >
                      Teams
                   </a>
                   <div id="submenu-2" class="collapse">
                      <ul class="nav nav-small flex-column">
                         @foreach($layout["sidebar"]["teams"] as $team)
                            <li class="nav-item">
-                              <a class="nav-link" href="/team?idTeam={{ $team->id }}">
+                              <a class="nav-link" href="{{ route('team:index', [ 'idTeam' => $team->id ]) }}">
                                  {{ $team->name }}
                               </a>
                            </li>

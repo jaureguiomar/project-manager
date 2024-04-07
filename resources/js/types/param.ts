@@ -1,4 +1,4 @@
-export interface Route {
+export interface Param {
    key: string;
    value: string;
 }
