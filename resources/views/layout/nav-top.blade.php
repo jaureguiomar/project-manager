@@ -17,7 +17,7 @@
 <body>
    <div class="layout layout-nav-top">
       <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-         <a class="navbar-brand" href="/">
+         <a class="navbar-brand" href="{{ route('core:index') }}">
             <img alt="Pipeline" src="assets/img/logo.svg" />
          </a>
          @include("components.navbar-responsive")
@@ -34,7 +34,7 @@
                      </a>
                      <div class="dropdown-menu">
                         @foreach($layout["sidebar"]["teams"] as $team)
-                           <a class="dropdown-item" href="/team?idTeam={{ $team->id }}">
+                           <a class="dropdown-item" href="{{ route('team:index', [ 'idTeam' => $team->id ]) }}">
                               {{ $team->name }}
                            </a>
                         @endforeach
@@ -48,7 +48,14 @@
                      </a>
                      <div class="dropdown-menu">
                         @foreach($layout["sidebar"]["projects"] as $project)
-                           <a class="dropdown-item" href="/project?idTeam={{ $project->team_id }}&idProject={{ $project->id }}">
+                           <a class="dropdown-item" href="
+                              {{
+                                 route('project:index', [
+                                    'idTeam' => $project->team_id,
+                                    'idProject' => $project->id
+                                 ])
+                              }}"
+                           >
                               {{ $project->name }}
                            </a>
                         @endforeach
@@ -62,7 +69,15 @@
                      </a>
                      <div class="dropdown-menu">
                         @foreach($layout["sidebar"]["tasks"] as $task)
-                           <a class="dropdown-item" href="/task?idTeam={{ $task->team_id }}&idProject={{ $task->project_id }}&idTask={{ $task->id }}">
+                           <a class="dropdown-item" href="
+                              {{
+                                 route('task:index', [
+                                    'idTeam' => $task->team_id,
+                                    'idProject' => $task->project_id,
+                                    'idTask' => $task->id
+                                 ])
+                              }}"
+                           >
                               {{ $task->name }}
                            </a>
                         @endforeach
@@ -70,7 +85,7 @@
                   </div>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="/settings">Settings</a>
+                  <a class="nav-link" href="{{ route('settings:index') }}">Settings</a>
                </li>
             </ul>
             <div class="d-lg-flex align-items-center">
@@ -89,9 +104,9 @@
                      Add New
                   </button>
                   <div class="dropdown-menu">
-                     <a class="dropdown-item" href="#">Team</a>
-                     <a class="dropdown-item" href="#">Project</a>
-                     <a class="dropdown-item" href="#">Task</a>
+                     <a class="dropdown-item" href="{{ route('core:index') }}">Team</a>
+                     <a class="dropdown-item" href="{{ route('core:index') }}">Project</a>
+                     <a class="dropdown-item" href="{{ route('core:index') }}">Task</a>
                   </div>
                </div>
                <div class="d-none d-lg-block">
@@ -100,8 +115,8 @@
                         <img alt="Image" src="assets/img/avatar-male-4.jpg" class="avatar" />
                      </a>
                      <div class="dropdown-menu dropdown-menu-right">
-                        <a href="/user" class="dropdown-item">Profile</a>
-                        <a href="/settings" class="dropdown-item">Account Settings</a>
+                        <a href="{{ route('user:index') }}" class="dropdown-item">Profile</a>
+                        <a href="{{ route('settings:index') }}" class="dropdown-item">Account Settings</a>
                         <a href="#" class="dropdown-item">Log Out</a>
                      </div>
                   </div>

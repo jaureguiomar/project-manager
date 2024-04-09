@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\CoreController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SettingsController;
