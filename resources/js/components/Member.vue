@@ -1,5 +1,5 @@
 <template>
-   <a class="media media-member" href="#">
+   <a class="media media-member" href="/user">
       <img :alt="name" :src="image" class="avatar avatar-lg" />
       <div class="media-body">
          <h6 class="mb-0" data-filter-by="text">{{ name }}</h6>

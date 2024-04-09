@@ -1,6 +1,6 @@
 <template>
    <li>
-      <a v-if="link" href="#" data-toggle="tooltip" data-placement="top" :title="name">
+      <a v-if="link" href="/user" data-toggle="tooltip" data-placement="top" :title="name">
          <img :alt="name" class="avatar" :src="image" />
       </a>
       <img v-else :alt="name" :src="image" class="avatar" data-toggle="tooltip" :data-title="name" />

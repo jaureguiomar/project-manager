@@ -20315,7 +20315,7 @@ var _hoisted_3 = ["alt", "src", "data-title"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", null, [_ctx.link ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
     key: 0,
-    href: "#",
+    href: "/user",
     "data-toggle": "tooltip",
     "data-placement": "top",
     title: _ctx.name
@@ -20425,7 +20425,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   "class": "media media-member",
-  href: "#"
+  href: "/user"
 };
 var _hoisted_2 = ["alt", "src"];
 var _hoisted_3 = {
