@@ -67,64 +67,32 @@
                   <div class="tab-pane fade" id="project-add-members" role="tabpanel">
                      <div class="users-manage" data-filter-list="form-group-users">
                         <div class="mb-3">
-                        <ul class="avatars text-center">
-
-                           <li>
-                              <img alt="Claire Connors" src="assets/img/avatar-female-1.jpg" class="avatar" data-toggle="tooltip" data-title="Claire Connors" />
-                           </li>
-
-                           <li>
-                              <img alt="Marcus Simmons" src="assets/img/avatar-male-1.jpg" class="avatar" data-toggle="tooltip" data-title="Marcus Simmons" />
-                           </li>
-
-                           <li>
-                              <img alt="Peggy Brown" src="assets/img/avatar-female-2.jpg" class="avatar" data-toggle="tooltip" data-title="Peggy Brown" />
-                           </li>
-
-                           <li>
-                              <img alt="Harry Xai" src="assets/img/avatar-male-2.jpg" class="avatar" data-toggle="tooltip" data-title="Harry Xai" />
-                           </li>
-                        </ul>
+                           <ul class="avatars text-center">
+                              <Avatar name="Claire Connors" image="assets/img/avatar-female-1.jpg" />
+                              <Avatar name="Marcus Simmons" image="assets/img/avatar-male-1.jpg" />
+                              <Avatar name="Marcus Simmons" image="assets/img/avatar-male-1.jpg" />
+                              <Avatar name="Marcus Simmons" image="assets/img/avatar-male-1.jpg" />
+                           </ul>
                         </div>
                         <div class="input-group input-group-round">
-                        <div class="input-group-prepend">
-                           <span class="input-group-text">
-                              <i class="material-icons">filter_list</i>
-                           </span>
-                        </div>
+                           <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                 <i class="material-icons">filter_list</i>
+                              </span>
+                           </div>
                            <input type="search" class="form-control filter-list-input" placeholder="Filter members" aria-label="Filter Members">
                         </div>
 
                         <div class="form-group-users">
-                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="project-user-1" checked>
-                              <label class="custom-control-label" for="project-user-1">
-                                 <span class="d-flex align-items-center">
-                                    <img alt="Claire Connors" src="assets/img/avatar-female-1.jpg" class="avatar mr-2" />
-                                    <span class="h6 mb-0" data-filter-by="text">Claire Connors</span>
-                                 </span>
-                              </label>
-                           </div>
-
-                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="project-user-2" checked>
-                              <label class="custom-control-label" for="project-user-2">
-                                 <span class="d-flex align-items-center">
-                                    <img alt="Marcus Simmons" src="assets/img/avatar-male-1.jpg" class="avatar mr-2" />
-                                    <span class="h6 mb-0" data-filter-by="text">Marcus Simmons</span>
-                                 </span>
-                              </label>
-                           </div>
-
-                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="project-user-3" checked>
-                              <label class="custom-control-label" for="project-user-3">
-                                 <span class="d-flex align-items-center">
-                                    <img alt="Peggy Brown" src="assets/img/avatar-female-2.jpg" class="avatar mr-2" />
-                                    <span class="h6 mb-0" data-filter-by="text">Peggy Brown</span>
-                                 </span>
-                              </label>
-                           </div>
+                           <MemberCheck name="Claire Connors" image="assets/img/avatar-female-1.jpg" />
+                           <MemberCheck name="Marcus Simmons" image="assets/img/avatar-male-1.jpg" />
+                           <MemberCheck name="Claire Connors" image="assets/img/avatar-female-1.jpg" />
+                           <MemberCheck name="Marcus Simmons" image="assets/img/avatar-male-1.jpg" />
+                           <MemberCheck name="Claire Connors" image="assets/img/avatar-female-1.jpg" />
+                           <MemberCheck name="Marcus Simmons" image="assets/img/avatar-male-1.jpg" />
+                           <MemberCheck name="Claire Connors" image="assets/img/avatar-female-1.jpg" />
+                           <MemberCheck name="Marcus Simmons" image="assets/img/avatar-male-1.jpg" />
+                           <MemberCheck name="Claire Connors" image="assets/img/avatar-female-1.jpg" />
 
                            <div class="custom-control custom-checkbox">
                               <input type="checkbox" class="custom-control-input" id="project-user-4" checked>
@@ -132,86 +100,6 @@
                                  <span class="d-flex align-items-center">
                                     <img alt="Harry Xai" src="assets/img/avatar-male-2.jpg" class="avatar mr-2" />
                                     <span class="h6 mb-0" data-filter-by="text">Harry Xai</span>
-                                 </span>
-                              </label>
-                           </div>
-
-                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="project-user-5">
-                              <label class="custom-control-label" for="project-user-5">
-                                 <span class="d-flex align-items-center">
-                                    <img alt="Sally Harper" src="assets/img/avatar-female-3.jpg" class="avatar mr-2" />
-                                    <span class="h6 mb-0" data-filter-by="text">Sally Harper</span>
-                                 </span>
-                              </label>
-                           </div>
-
-                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="project-user-6">
-                              <label class="custom-control-label" for="project-user-6">
-                                 <span class="d-flex align-items-center">
-                                    <img alt="Ravi Singh" src="assets/img/avatar-male-3.jpg" class="avatar mr-2" />
-                                    <span class="h6 mb-0" data-filter-by="text">Ravi Singh</span>
-                                 </span>
-                              </label>
-                           </div>
-
-                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="project-user-7">
-                              <label class="custom-control-label" for="project-user-7">
-                                 <span class="d-flex align-items-center">
-                                    <img alt="Kristina Van Der Stroem" src="assets/img/avatar-female-4.jpg" class="avatar mr-2" />
-                                    <span class="h6 mb-0" data-filter-by="text">Kristina Van Der Stroem</span>
-                                 </span>
-                              </label>
-                           </div>
-
-                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="project-user-8">
-                              <label class="custom-control-label" for="project-user-8">
-                                 <span class="d-flex align-items-center">
-                                    <img alt="David Whittaker" src="assets/img/avatar-male-4.jpg" class="avatar mr-2" />
-                                    <span class="h6 mb-0" data-filter-by="text">David Whittaker</span>
-                                 </span>
-                              </label>
-                           </div>
-
-                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="project-user-9">
-                              <label class="custom-control-label" for="project-user-9">
-                                 <span class="d-flex align-items-center">
-                                    <img alt="Kerri-Anne Banks" src="assets/img/avatar-female-5.jpg" class="avatar mr-2" />
-                                    <span class="h6 mb-0" data-filter-by="text">Kerri-Anne Banks</span>
-                                 </span>
-                              </label>
-                           </div>
-
-                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="project-user-10">
-                              <label class="custom-control-label" for="project-user-10">
-                                 <span class="d-flex align-items-center">
-                                    <img alt="Masimba Sibanda" src="assets/img/avatar-male-5.jpg" class="avatar mr-2" />
-                                    <span class="h6 mb-0" data-filter-by="text">Masimba Sibanda</span>
-                                 </span>
-                              </label>
-                           </div>
-
-                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="project-user-11">
-                              <label class="custom-control-label" for="project-user-11">
-                                 <span class="d-flex align-items-center">
-                                    <img alt="Krishna Bajaj" src="assets/img/avatar-female-6.jpg" class="avatar mr-2" />
-                                    <span class="h6 mb-0" data-filter-by="text">Krishna Bajaj</span>
-                                 </span>
-                              </label>
-                           </div>
-
-                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="project-user-12">
-                              <label class="custom-control-label" for="project-user-12">
-                                 <span class="d-flex align-items-center">
-                                    <img alt="Kenny Tran" src="assets/img/avatar-male-6.jpg" class="avatar mr-2" />
-                                    <span class="h6 mb-0" data-filter-by="text">Kenny Tran</span>
                                  </span>
                               </label>
                            </div>
@@ -232,8 +120,15 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Avatar from "../Avatar.vue";
+import MemberCheck from "../MemberCheck.vue";
+
 export default defineComponent({
    name: "ProjectNewModal",
+   components: {
+      Avatar,
+      MemberCheck
+   },
    setup() {
       return {};
    }

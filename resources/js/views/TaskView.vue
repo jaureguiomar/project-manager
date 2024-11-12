@@ -216,12 +216,13 @@
                            <span class="dz-message">Drop files here or click here to upload</span>
                         </form>
                         <ul class="list-group list-group-activity dropzone-previews flex-column-reverse">
+                           <Files v-for="file in files" />
+                           <!-- <File />
                            <File />
                            <File />
                            <File />
                            <File />
-                           <File />
-                           <File />
+                           <File /> -->
                         </ul>
                      </div>
                   </div>
@@ -302,7 +303,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import axios from "../utils/axios";
+import { defineComponent, ref, onMounted, PropType } from "vue";
 import Avatar from "../components/Avatar.vue";
 import Checklist from "../components/Checklist.vue";
 import Note from "../components/Note.vue";
@@ -311,7 +313,9 @@ import Activity from "../components/Activity.vue";
 import TaskUserManageModal from "../components/modals/TaskUserManageModal.vue";
 import TaskEditModal from "../components/modals/TaskEditModal.vue";
 import TaskNoteAddModal from "../components/modals/TaskNoteAddModal.vue";
+import { getParams } from "../mixins/get-params";
 import { Param } from "../types/param";
+import { File as FileType } from "../types/file";
 
 export default defineComponent({
    name: "TaskView",
@@ -331,8 +335,25 @@ export default defineComponent({
       TaskEditModal,
       TaskNoteAddModal
    },
-   setup() {
-      return {};
+   setup(props) {
+      const files = ref<FileType[]>([]);
+      const params = getParams(props.params);
+      const idTeam = ref(params.idTeam);
+      const idProject = ref(params.idProject);
+      const idTask = ref(params.idTask);
+
+      // onMounted(() => {
+         axios.get<FileType[]>(`/v1/task/${ idTeam.value }/${ idProject.value }/${ idTask.value }`)
+            .then((response) => {
+               files.value = response.data;
+            }).catch((error) => {
+               console.log("error", error);
+            });
+      // });
+
+      return {
+         files
+      };
    }
 });
 </script>

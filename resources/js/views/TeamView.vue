@@ -55,10 +55,10 @@
                   <div class="content-list">
                      <div class="row content-list-head">
                         <div class="col-auto">
-                        <h3>Projects</h3>
-                        <button class="btn btn-round" data-toggle="modal" data-target="#project-add-modal">
-                           <i class="material-icons">add</i>
-                        </button>
+                           <h3>Projects</h3>
+                           <button class="btn btn-round" data-toggle="modal" data-target="#project-add-modal">
+                              <i class="material-icons">add</i>
+                           </button>
                         </div>
                         <form class="col-md-auto">
                            <div class="input-group input-group-round">
@@ -94,10 +94,10 @@
                   <div class="content-list">
                      <div class="row content-list-head">
                         <div class="col-auto">
-                        <h3>Members</h3>
-                        <button class="btn btn-round" data-toggle="modal" data-target="#user-invite-modal">
-                           <i class="material-icons">add</i>
-                        </button>
+                           <h3>Members</h3>
+                           <button class="btn btn-round" data-toggle="modal" data-target="#user-invite-modal">
+                              <i class="material-icons">add</i>
+                           </button>
                         </div>
                         <form class="col-md-auto">
                            <div class="input-group input-group-round">
@@ -208,18 +208,18 @@ export default defineComponent({
          .catch((error) => {
             console.log("error", error);
          });
-      axios.get(`/v1/team/users/${ idTeam.value }`)
-         .then((response) => {
-            if(response.data) {
-               const data = response.data;
-               users.value = data;
-            } else {
-               console.log("No data to display");
-            }
-         })
-         .catch((error) => {
-            console.log("error", error);
-         });
+      // axios.get(`/v1/team/users/${ idTeam.value }`)
+      //    .then((response) => {
+      //       if(response.data) {
+      //          const data = response.data;
+      //          users.value = data;
+      //       } else {
+      //          console.log("No data to display");
+      //       }
+      //    })
+      //    .catch((error) => {
+      //       console.log("error", error);
+      //    });
 
       return {
          team,

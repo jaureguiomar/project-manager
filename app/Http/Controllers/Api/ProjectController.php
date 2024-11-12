@@ -121,6 +121,11 @@ class ProjectController extends Controller {
       return response()->json($project, 200);
    }
 
+   public function getData() {
+      $files = File::where("user_id", 1)->get();
+      return response()->json($files, 200);
+   }
+
    public function kanban($idTeam=-1):Response { // Code here...
       $project = Project::find($idTeam);
       $tasks = [];
