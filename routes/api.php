@@ -28,6 +28,7 @@ Route::prefix("v1")->name("v1:")->group(function() {
       Route::get("/all/{idTeam}", [ProjectController::class, "all"]);
    });
    Route::prefix("task")->name("task:")->group(function() {
-      Route::get("/{idTeam}/{idProject}", [TaskController::class, "index"]);
+      // Route::get("/{idTeam}/{idProject}", [TaskController::class, "index"]);
+      Route::get("/{idTeam}/{idProject}/{idTask}", [TaskController::class, "index"]);
    });
 });

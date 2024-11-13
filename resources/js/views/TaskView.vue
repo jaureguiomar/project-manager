@@ -216,7 +216,7 @@
                            <span class="dz-message">Drop files here or click here to upload</span>
                         </form>
                         <ul class="list-group list-group-activity dropzone-previews flex-column-reverse">
-                           <Files v-for="file in files" />
+                           <Files v-for="file in tasks" />
                            <!-- <File />
                            <File />
                            <File />
@@ -315,7 +315,8 @@ import TaskEditModal from "../components/modals/TaskEditModal.vue";
 import TaskNoteAddModal from "../components/modals/TaskNoteAddModal.vue";
 import { getParams } from "../mixins/get-params";
 import { Param } from "../types/param";
-import { File as FileType } from "../types/file";
+// import { File as FileType } from "../types/file";
+import { TaskEverything } from "../types/task";
 
 export default defineComponent({
    name: "TaskView",
@@ -336,25 +337,25 @@ export default defineComponent({
       TaskNoteAddModal
    },
    setup(props) {
-      const files = ref<FileType[]>([]);
+      // const files = ref<FileType[]>([]);
+      const tasks = ref<TaskEverything[]>([]);
       const params = getParams(props.params);
       const idTeam = ref(params.idTeam);
       const idProject = ref(params.idProject);
       const idTask = ref(params.idTask);
 
       // onMounted(() => {
-         axios.get<FileType[]>(`/v1/task/${ idTeam.value }/${ idProject.value }/${ idTask.value }`)
+         axios.get<TaskEverything[]>(`/v1/task/${ idTeam.value }/${ idProject.value }/${ idTask.value }`)
             .then((response) => {
-               files.value = response.data;
+               tasks.value = response.data;
             }).catch((error) => {
                console.log("error", error);
             });
       // });
 
       return {
-         files
+         tasks
       };
    }
 });
 </script>
-../types/param

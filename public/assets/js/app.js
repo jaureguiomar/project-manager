@@ -20099,20 +20099,21 @@ __webpack_require__.r(__webpack_exports__);
     TaskNoteAddModal: _components_modals_TaskNoteAddModal_vue__WEBPACK_IMPORTED_MODULE_9__["default"]
   },
   setup: function setup(props) {
-    var files = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)([]);
+    // const files = ref<FileType[]>([]);
+    var tasks = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)([]);
     var params = (0,_mixins_get_params__WEBPACK_IMPORTED_MODULE_10__.getParams)(props.params);
     var idTeam = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(params.idTeam);
     var idProject = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(params.idProject);
     var idTask = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(params.idTask);
     // onMounted(() => {
     _utils_axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("/v1/task/".concat(idTeam.value, "/").concat(idProject.value, "/").concat(idTask.value)).then(function (response) {
-      files.value = response.data;
+      tasks.value = response.data;
     })["catch"](function (error) {
       console.log("error", error);
     });
     // });
     return {
-      files: files
+      tasks: tasks
     };
   }
 }));
@@ -25702,7 +25703,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     checked: false
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Checklist, {
     checked: true
-  })]), _hoisted_19])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Note), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Note), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Note), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Note)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_29, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.files, function (file) {
+  })]), _hoisted_19])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Note), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Note), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Note), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Note)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_29, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.tasks, function (file) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Files);
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <File />\n                           <File />\n                           <File />\n                           <File />\n                           <File />\n                           <File /> ")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [_hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ol", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Activity, {
     icon: "playlist_add_check",
